@@ -157,8 +157,8 @@ struct vehicle
 struct user
 {
 	string login;
-	string email;
 	string password;
+	contact contact;
 };
 struct contact
 {
@@ -172,3 +172,8 @@ void showCars();
 void showTrucks();
 void showBus();
 void showBikes();
+void insert();
+void addNew();
+void offerNew();
+void addNewUser();
+void authorization();

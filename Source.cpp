@@ -12,6 +12,7 @@ void main()
 	int actionClient = 0;
 	do
 	{
+
 		cout << "1. Увiйти як клiєнт:" << endl;
 		cout << "2. Увiйти як адмiн:" << endl;
 		cout << "3. Зареєструватися:" << endl;
@@ -23,6 +24,7 @@ void main()
 		{
 			do
 			{
+				system("cls");
 				cout << "Оберiть категорiю: " << endl;
 				cout << "1. Легковi: " << endl;
 				cout << "2. Вантажнi: " << endl;
@@ -50,6 +52,7 @@ void main()
 				}break;
 				case 5:
 				{
+					system("cls");
 					cout << "Good bye!" << endl;
 				}break;
 				default:
@@ -69,7 +72,8 @@ void main()
 		}break;
 		case 4:
 		{
-
+			system("cls");
+			cout << "Good bye!" << endl;
 		}break;
 
 		
