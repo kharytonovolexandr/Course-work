@@ -7,7 +7,7 @@ void main()
 {
 	init();
 	initUser();
-	setlocale(LC_ALL, "Russian");
+	setlocale(LC_ALL, "RUSSIAN");
 	int action = 0;
 	int actionClient = 0;
 	do

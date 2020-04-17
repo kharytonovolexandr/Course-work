@@ -466,15 +466,15 @@ void addNew()
 			int actionCar = 0;
 			system("cls");
 			cout << "Оберiть категорiю: " << endl;
-			cout << "1. Двигун і навісне: " << endl;
-			cout << "2. Трансмісія: " << endl;
-			cout << "3. Елементи кузова і скло: " << endl;
-			cout << "4. Фари і оптика: " << endl;
-			cout << "5. Підвіска: " << endl;
+			cout << "1. Двигун i навiсне: " << endl;
+			cout << "2. Трансмiсiя: " << endl;
+			cout << "3. Елементи кузова i скло: " << endl;
+			cout << "4. Фари i оптика: " << endl;
+			cout << "5. Пiдвiска: " << endl;
 			cout << "6. Колеса: " << endl;
-			cout << "7. Салон і комплектуючі: " << endl;
-			cout << "8. Електроніка і проводка: " << endl;
-			cout << "9. Інше: " << endl;
+			cout << "7. Салон i комплектуючi: " << endl;
+			cout << "8. Електронiка i проводка: " << endl;
+			cout << "9. iнше: " << endl;
 			cout << "0. Вийти: " << endl;
 			cin >> actionCar;
 			switch (actionCar)
@@ -487,7 +487,7 @@ void addNew()
 				cin>> newVehicle.car.engine.brand.marka;
 				cout << "модель:" << endl;
 				cin>> newVehicle.car.engine.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin>> newVehicle.car.engine.brand.year;
 				cout << "Об'єм двигуна:" << endl;
 				cin>> newVehicle.car.engine.EnginVol;
@@ -497,7 +497,7 @@ void addNew()
 				cin>> newVehicle.car.engine.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin>> newVehicle.car.engine.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin>> newVehicle.car.engine.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin>> newVehicle.car.engine.contact.phoneNumb;
@@ -513,7 +513,7 @@ void addNew()
 				cin >> newVehicle.car.transmission.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.car.transmission.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.car.transmission.brand.year;
 				cout << "Об'єм двигуна:" << endl;
 				cin >> newVehicle.car.transmission.EnginVol;
@@ -523,7 +523,7 @@ void addNew()
 				cin >> newVehicle.car.transmission.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.car.transmission.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.car.transmission.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.car.transmission.contact.phoneNumb;
@@ -539,13 +539,13 @@ void addNew()
 				cin>> newVehicle.car.body.brand.marka;
 				cout << "модель:" << endl;
 				cin>> newVehicle.car.body.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin>> newVehicle.car.body.brand.year;
 				cout << "Тип кузова:" << endl;
 				cin>> newVehicle.car.body.type.bodytype;
 				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
 				cin>> newVehicle.car.body.type.restyle;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin>> newVehicle.car.body.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin>> newVehicle.car.body.contact.phoneNumb;
@@ -560,9 +560,9 @@ void addNew()
 				cin>> newVehicle.car.light.brand.marka;
 				cout << "модель:" << endl;
 				cin>> newVehicle.car.light.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin>> newVehicle.car.light.brand.year;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin>> newVehicle.car.light.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin>> newVehicle.car.light.contact.phoneNumb;
@@ -577,13 +577,13 @@ void addNew()
 				cin >> newVehicle.car.suspension.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.car.suspension.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.car.suspension.brand.year;
 				cout << "Стан (1-5):" << endl;
 				cin >> newVehicle.car.suspension.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.car.suspension.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.car.suspension.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.car.suspension.contact.phoneNumb;
@@ -594,13 +594,13 @@ void addNew()
 			{
 				cout << "Опис:" << endl;
 				cin >> newVehicle.car.wheels.title;
-				cout << "Радіус:" << endl;
+				cout << "Радiус:" << endl;
 				cin >> newVehicle.car.wheels.radius;
 				cout << "Сезон:" << endl;
 				cin >> newVehicle.car.wheels.season;
-				cout << "Розмір (параметри):" << endl;
+				cout << "Розмiр (параметри):" << endl;
 				cin >> newVehicle.car.wheels.size;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.car.wheels.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.car.wheels.contact.phoneNumb;
@@ -615,7 +615,7 @@ void addNew()
 				cin >> newVehicle.car.salon.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.car.salon.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.car.salon.brand.year;
 				cout << "Стан (1-5):" << endl;
 				cin >> newVehicle.car.salon.condition;
@@ -625,7 +625,7 @@ void addNew()
 				cin >> newVehicle.car.salon.Bodytype.restyle;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.car.salon.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.car.salon.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.car.salon.contact.phoneNumb;
@@ -640,7 +640,7 @@ void addNew()
 				cin >> newVehicle.car.elecronic.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.car.elecronic.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.car.elecronic.brand.year;
 				cout << "Тип кузова:" << endl;
 				cin >> newVehicle.car.elecronic.Bodytype.bodytype;
@@ -648,7 +648,7 @@ void addNew()
 				cin >> newVehicle.car.elecronic.Bodytype.restyle;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.car.elecronic.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.car.elecronic.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.car.elecronic.contact.phoneNumb;
@@ -663,9 +663,9 @@ void addNew()
 				cin >> newVehicle.car.other.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.car.other.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.car.other.brand.year;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.car.other.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.car.other.contact.phoneNumb;
@@ -685,15 +685,15 @@ void addNew()
 			int actionTruck = 0;
 			system("cls");
 			cout << "Оберiть категорiю: " << endl;
-			cout << "1. Двигун і навісне: " << endl;
-			cout << "2. Трансмісія: " << endl;
-			cout << "3. Елементи кузова і скло: " << endl;
-			cout << "4. Фари і оптика: " << endl;
-			cout << "5. Підвіска: " << endl;
+			cout << "1. Двигун i навiсне: " << endl;
+			cout << "2. Трансмiсiя: " << endl;
+			cout << "3. Елементи кузова i скло: " << endl;
+			cout << "4. Фари i оптика: " << endl;
+			cout << "5. Пiдвiска: " << endl;
 			cout << "6. Колеса: " << endl;
-			cout << "7. Салон і комплектуючі: " << endl;
-			cout << "8. Електроніка і проводка: " << endl;
-			cout << "9. Інше: " << endl;
+			cout << "7. Салон i комплектуючi: " << endl;
+			cout << "8. Електронiка i проводка: " << endl;
+			cout << "9. iнше: " << endl;
 			cout << "0. Вийти: " << endl;
 			cin >> actionTruck;
 			switch (actionTruck)
@@ -706,7 +706,7 @@ void addNew()
 				cin >> newVehicle.truck.engine.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.truck.engine.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.truck.engine.brand.year;
 				cout << "Об'єм двигуна:" << endl;
 				cin >> newVehicle.truck.engine.EnginVol;
@@ -716,7 +716,7 @@ void addNew()
 				cin >> newVehicle.truck.engine.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.truck.engine.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.truck.engine.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.truck.engine.contact.phoneNumb;
@@ -732,7 +732,7 @@ void addNew()
 				cin >> newVehicle.truck.transmission.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.truck.transmission.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.truck.transmission.brand.year;
 				cout << "Об'єм двигуна:" << endl;
 				cin >> newVehicle.truck.transmission.EnginVol;
@@ -742,7 +742,7 @@ void addNew()
 				cin >> newVehicle.truck.transmission.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.truck.transmission.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.truck.transmission.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.truck.transmission.contact.phoneNumb;
@@ -758,13 +758,13 @@ void addNew()
 				cin >> newVehicle.truck.body.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.truck.body.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.truck.body.brand.year;
 				cout << "Тип кузова:" << endl;
 				cin >> newVehicle.truck.body.type.bodytype;
 				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
 				cin >> newVehicle.truck.body.type.restyle;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.truck.body.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.truck.body.contact.phoneNumb;
@@ -779,9 +779,9 @@ void addNew()
 				cin >> newVehicle.truck.light.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.truck.light.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.truck.light.brand.year;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.truck.light.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.truck.light.contact.phoneNumb;
@@ -796,13 +796,13 @@ void addNew()
 				cin >> newVehicle.truck.suspension.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.truck.suspension.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.truck.suspension.brand.year;
 				cout << "Стан (1-5):" << endl;
 				cin >> newVehicle.truck.suspension.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.truck.suspension.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.truck.suspension.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.truck.suspension.contact.phoneNumb;
@@ -813,13 +813,13 @@ void addNew()
 			{
 				cout << "Опис:" << endl;
 				cin >> newVehicle.truck.wheels.title;
-				cout << "Радіус:" << endl;
+				cout << "Радiус:" << endl;
 				cin >> newVehicle.truck.wheels.radius;
 				cout << "Сезон:" << endl;
 				cin >> newVehicle.truck.wheels.season;
-				cout << "Розмір (параметри):" << endl;
+				cout << "Розмiр (параметри):" << endl;
 				cin >> newVehicle.truck.wheels.size;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.truck.wheels.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.truck.wheels.contact.phoneNumb;
@@ -834,7 +834,7 @@ void addNew()
 				cin >> newVehicle.truck.salon.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.truck.salon.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.truck.salon.brand.year;
 				cout << "Стан (1-5):" << endl;
 				cin >> newVehicle.truck.salon.condition;
@@ -844,7 +844,7 @@ void addNew()
 				cin >> newVehicle.truck.salon.Bodytype.restyle;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.truck.salon.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.truck.salon.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.truck.salon.contact.phoneNumb;
@@ -859,7 +859,7 @@ void addNew()
 				cin >> newVehicle.truck.elecronic.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.truck.elecronic.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.truck.elecronic.brand.year;
 				cout << "Тип кузова:" << endl;
 				cin >> newVehicle.truck.elecronic.Bodytype.bodytype;
@@ -867,7 +867,7 @@ void addNew()
 				cin >> newVehicle.truck.elecronic.Bodytype.restyle;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.truck.elecronic.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.truck.elecronic.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.truck.elecronic.contact.phoneNumb;
@@ -882,9 +882,9 @@ void addNew()
 				cin >> newVehicle.truck.other.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.truck.other.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.truck.other.brand.year;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.truck.other.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.truck.other.contact.phoneNumb;
@@ -904,15 +904,15 @@ void addNew()
 			int actionBus = 0;
 			system("cls");
 			cout << "Оберiть категорiю: " << endl;
-			cout << "1. Двигун і навісне: " << endl;
-			cout << "2. Трансмісія: " << endl;
-			cout << "3. Елементи кузова і скло: " << endl;
-			cout << "4. Фари і оптика: " << endl;
-			cout << "5. Підвіска: " << endl;
+			cout << "1. Двигун i навiсне: " << endl;
+			cout << "2. Трансмiсiя: " << endl;
+			cout << "3. Елементи кузова i скло: " << endl;
+			cout << "4. Фари i оптика: " << endl;
+			cout << "5. Пiдвiска: " << endl;
 			cout << "6. Колеса: " << endl;
-			cout << "7. Салон і комплектуючі: " << endl;
-			cout << "8. Електроніка і проводка: " << endl;
-			cout << "9. Інше: " << endl;
+			cout << "7. Салон i комплектуючi: " << endl;
+			cout << "8. Електронiка i проводка: " << endl;
+			cout << "9. iнше: " << endl;
 			cout << "0. Вийти: " << endl;
 			cin >> actionBus;
 			switch (actionBus)
@@ -925,7 +925,7 @@ void addNew()
 				cin >> newVehicle.bus.engine.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bus.engine.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bus.engine.brand.year;
 				cout << "Об'єм двигуна:" << endl;
 				cin >> newVehicle.bus.engine.EnginVol;
@@ -935,7 +935,7 @@ void addNew()
 				cin >> newVehicle.bus.engine.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.bus.engine.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bus.engine.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bus.engine.contact.phoneNumb;
@@ -951,7 +951,7 @@ void addNew()
 				cin >> newVehicle.bus.transmission.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bus.transmission.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bus.transmission.brand.year;
 				cout << "Об'єм двигуна:" << endl;
 				cin >> newVehicle.bus.transmission.EnginVol;
@@ -961,7 +961,7 @@ void addNew()
 				cin >> newVehicle.bus.transmission.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.bus.transmission.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bus.transmission.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bus.transmission.contact.phoneNumb;
@@ -977,13 +977,13 @@ void addNew()
 				cin >> newVehicle.bus.body.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bus.body.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bus.body.brand.year;
 				cout << "Тип кузова:" << endl;
 				cin >> newVehicle.bus.body.type.bodytype;
 				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
 				cin >> newVehicle.bus.body.type.restyle;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bus.body.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bus.body.contact.phoneNumb;
@@ -998,9 +998,9 @@ void addNew()
 				cin >> newVehicle.bus.light.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bus.light.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bus.light.brand.year;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bus.light.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bus.light.contact.phoneNumb;
@@ -1015,13 +1015,13 @@ void addNew()
 				cin >> newVehicle.bus.suspension.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bus.suspension.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bus.suspension.brand.year;
 				cout << "Стан (1-5):" << endl;
 				cin >> newVehicle.bus.suspension.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.bus.suspension.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bus.suspension.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bus.suspension.contact.phoneNumb;
@@ -1032,13 +1032,13 @@ void addNew()
 			{
 				cout << "Опис:" << endl;
 				cin >> newVehicle.bus.wheels.title;
-				cout << "Радіус:" << endl;
+				cout << "Радiус:" << endl;
 				cin >> newVehicle.bus.wheels.radius;
 				cout << "Сезон:" << endl;
 				cin >> newVehicle.bus.wheels.season;
-				cout << "Розмір (параметри):" << endl;
+				cout << "Розмiр (параметри):" << endl;
 				cin >> newVehicle.bus.wheels.size;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bus.wheels.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bus.wheels.contact.phoneNumb;
@@ -1053,7 +1053,7 @@ void addNew()
 				cin >> newVehicle.bus.salon.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bus.salon.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bus.salon.brand.year;
 				cout << "Стан (1-5):" << endl;
 				cin >> newVehicle.bus.salon.condition;
@@ -1063,7 +1063,7 @@ void addNew()
 				cin >> newVehicle.bus.salon.Bodytype.restyle;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.bus.salon.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bus.salon.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bus.salon.contact.phoneNumb;
@@ -1078,7 +1078,7 @@ void addNew()
 				cin >> newVehicle.bus.elecronic.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bus.elecronic.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bus.elecronic.brand.year;
 				cout << "Тип кузова:" << endl;
 				cin >> newVehicle.bus.elecronic.Bodytype.bodytype;
@@ -1086,7 +1086,7 @@ void addNew()
 				cin >> newVehicle.bus.elecronic.Bodytype.restyle;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.bus.elecronic.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bus.elecronic.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bus.elecronic.contact.phoneNumb;
@@ -1101,9 +1101,9 @@ void addNew()
 				cin >> newVehicle.bus.other.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bus.other.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bus.other.brand.year;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bus.other.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bus.other.contact.phoneNumb;
@@ -1123,13 +1123,13 @@ void addNew()
 			int actionBike = 0;
 			system("cls");
 			cout << "Оберiть категорiю: " << endl;
-			cout << "1. Двигун і навісне: " << endl;
-			cout << "2. Трансмісія: " << endl;			
-			cout << "3. Фари і оптика: " << endl;
-			cout << "4. Підвіска: " << endl;
+			cout << "1. Двигун i навiсне: " << endl;
+			cout << "2. Трансмiсiя: " << endl;			
+			cout << "3. Фари i оптика: " << endl;
+			cout << "4. Пiдвiска: " << endl;
 			cout << "5. Колеса: " << endl;	
-			cout << "6. Електроніка і проводка: " << endl;
-			cout << "7. Інше: " << endl;
+			cout << "6. Електронiка i проводка: " << endl;
+			cout << "7. iнше: " << endl;
 			cout << "0. Вийти: " << endl;
 			cin >> actionBike;
 			switch (actionBike)
@@ -1142,7 +1142,7 @@ void addNew()
 				cin >> newVehicle.bike.engine.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bike.engine.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bike.engine.brand.year;
 				cout << "Об'єм двигуна:" << endl;
 				cin >> newVehicle.bike.engine.EnginVol;
@@ -1152,7 +1152,7 @@ void addNew()
 				cin >> newVehicle.bike.engine.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.bike.engine.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bike.engine.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bike.engine.contact.phoneNumb;
@@ -1168,7 +1168,7 @@ void addNew()
 				cin >> newVehicle.bike.transmission.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bike.transmission.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bike.transmission.brand.year;
 				cout << "Об'єм двигуна:" << endl;
 				cin >> newVehicle.bike.transmission.EnginVol;
@@ -1178,7 +1178,7 @@ void addNew()
 				cin >> newVehicle.bike.transmission.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.bike.transmission.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bike.transmission.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bike.transmission.contact.phoneNumb;
@@ -1195,9 +1195,9 @@ void addNew()
 				cin >> newVehicle.bike.light.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bike.light.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bike.light.brand.year;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bike.light.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bike.light.contact.phoneNumb;
@@ -1212,13 +1212,13 @@ void addNew()
 				cin >> newVehicle.bike.suspension.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bike.suspension.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bike.suspension.brand.year;
 				cout << "Стан (1-5):" << endl;
 				cin >> newVehicle.bike.suspension.condition;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.bike.suspension.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bike.suspension.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bike.suspension.contact.phoneNumb;
@@ -1229,13 +1229,13 @@ void addNew()
 			{
 				cout << "Опис:" << endl;
 				cin >> newVehicle.bike.wheels.title;
-				cout << "Радіус:" << endl;
+				cout << "Радiус:" << endl;
 				cin >> newVehicle.bike.wheels.radius;
 				cout << "Сезон:" << endl;
 				cin >> newVehicle.bike.wheels.season;
-				cout << "Розмір (параметри):" << endl;
+				cout << "Розмiр (параметри):" << endl;
 				cin >> newVehicle.bike.wheels.size;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bike.wheels.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bike.wheels.contact.phoneNumb;
@@ -1251,7 +1251,7 @@ void addNew()
 				cin >> newVehicle.bike.elecronic.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bike.elecronic.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bike.elecronic.brand.year;
 				cout << "Тип кузова:" << endl;
 				cin >> newVehicle.bike.elecronic.Bodytype.bodytype;
@@ -1259,7 +1259,7 @@ void addNew()
 				cin >> newVehicle.bike.elecronic.Bodytype.restyle;
 				cout << "Каталожний номер (якщо є):" << endl;
 				cin >> newVehicle.bike.elecronic.catalogNumb;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bike.elecronic.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bike.elecronic.contact.phoneNumb;
@@ -1274,9 +1274,9 @@ void addNew()
 				cin >> newVehicle.bike.other.brand.marka;
 				cout << "модель:" << endl;
 				cin >> newVehicle.bike.other.brand.model;
-				cout << "Рік випуску:" << endl;
+				cout << "Рiк випуску:" << endl;
 				cin >> newVehicle.bike.other.brand.year;
-				cout << "Контактні дані (ім'я):" << endl;
+				cout << "Контактнi данi (iм'я):" << endl;
 				cin >> newVehicle.bike.other.contact.name;
 				cout << "Номер телефону:" << endl;
 				cin >> newVehicle.bike.other.contact.phoneNumb;
@@ -1317,18 +1317,18 @@ void addNewUser()
 {
 	{
 		user newUser;
-		cout << "Введіть логін: ";
+		cout << "Введiть логiн: ";
 		//cin.ignore();
 		cin>> newUser.login;
-		cout << "Введіть пароль: ";
+		cout << "Введiть пароль: ";
 		cin >> newUser.password;
 		
-		cout << "Введіть ім'я нового користувача: ";
+		cout << "Введiть iм'я нового користувача: ";
 		cin.ignore();
 		getline(cin, newUser.contact.name);
-		cout << "Введіть контактний номер телефону:" << endl;
+		cout << "Введiть контактний номер телефону:" << endl;
 		cin >> newUser.contact.phoneNumb;
-		cout << "Введіть email: ";
+		cout << "Введiть email: ";
 		cin >> newUser.contact.email;
 		
 		
@@ -1351,7 +1351,7 @@ void addNewUser()
 			fout << newUser.contact.email << endl;
 		}
 		fout.close();
-		cout << "Успішно додано нового користувача." << endl;
+		cout << "Успiшно додано нового користувача." << endl;
 		PAUSE
 			CLEAR
 	}
@@ -1363,7 +1363,7 @@ void authorization()
 	string password;
 	int tryAgain = 0;
 begin:
-	cout << "Логін:" << endl;
+	cout << "Логiн:" << endl;
 	cin >> login;
 	cout << "Пароль: " << endl;
 	cin >> password;
@@ -1372,15 +1372,15 @@ begin:
 	{
 		if (item.login == login || item.password == password)
 		{
-			cout << "Ви увійшли як " << login << endl;
+			cout << "Ви увiйшли як " << login << endl;
 
 		}
 		else
 			CLEAR
 
-			cout << "Невірний логін чи пароль, або користувач з таким логіном не існує!" << endl;
+			cout << "Невiрний логiн чи пароль, або користувач з таким логiном не iснує!" << endl;
 		cout << "1. Спробувати знову: " << endl;
-		cout << "2. Вихід." << endl;
+		cout << "2. Вихiд." << endl;
 		cin >> tryAgain;
 		if (tryAgain == 1)
 		{
@@ -1388,6 +1388,6 @@ begin:
 		}
 		else
 			break;
-		return; //Не знаю як тут зробити, щоб воно геть повернуло на початок функції мейн. Тому хай поки буде так.
+		return; //Не знаю як тут зробити, щоб воно геть повернуло на початок функцiї мейн. Тому хай поки буде так.
 	}
 }

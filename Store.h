@@ -4,68 +4,12 @@
 
 using namespace std;
 
-struct vehicle
+struct contact
 {
-	int id;
-	cars car;
-	truck truck;
-	bus bus;
-	bikes bike;
+	string name;
+	string phoneNumb;
+	string email;
 };
-	struct cars
-	{
-		int id;
-		brandCar brandCar;
-		engine engine;
-		transmission transmission;
-		body body;
-		headlights light;
-		suspension suspension;
-		wheels wheels;
-		salon salon;
-		electronic elecronic;
-		other other;
-	};
-	struct truck
-	{
-		int id;
-		brandCar brandCar;
-		engine engine;
-		transmission transmission;
-		body body;
-		headlights light;
-		suspension suspension;
-		wheels wheels;
-		salon salon;
-		electronic elecronic;
-		other other;
-	};
-	struct bus
-	{
-		int id;
-		brandCar brandCar;
-		engine engine;
-		transmission transmission;
-		body body;
-		headlights light;
-		suspension suspension;
-		wheels wheels;
-		salon salon;
-		electronic elecronic;
-		other other;
-	};
-	struct bikes
-	{
-		int id;
-		brandCar brandCar;
-		engine engine;
-		transmission transmission;
-		headlights light;
-		suspension suspension;
-		wheels wheels;
-		electronic elecronic;
-		other other;
-	};
 	struct carType
 	{
 		string bodytype;
@@ -160,11 +104,68 @@ struct user
 	string password;
 	contact contact;
 };
-struct contact
+
+struct cars
 {
-	string name;
-	string phoneNumb;
-	string email;
+	int id;
+	brandCar brandCar;
+	engine engine;
+	transmission transmission;
+	body body;
+	headlights light;
+	suspension suspension;
+	wheels wheels;
+	salon salon;
+	electronic elecronic;
+	other other;
+};
+struct truck
+{
+	int id;
+	brandCar brandCar;
+	engine engine;
+	transmission transmission;
+	body body;
+	headlights light;
+	suspension suspension;
+	wheels wheels;
+	salon salon;
+	electronic elecronic;
+	other other;
+};
+struct bus
+{
+	int id;
+	brandCar brandCar;
+	engine engine;
+	transmission transmission;
+	body body;
+	headlights light;
+	suspension suspension;
+	wheels wheels;
+	salon salon;
+	electronic elecronic;
+	other other;
+};
+struct bikes
+{
+	int id;
+	brandCar brandCar;
+	engine engine;
+	transmission transmission;
+	headlights light;
+	suspension suspension;
+	wheels wheels;
+	electronic elecronic;
+	other other;
+};
+struct vehicle
+{
+	int id;
+	cars car;
+	truck truck;
+	bus bus;
+	bikes bike;
 };
 void init();
 void initUser();
