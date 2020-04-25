@@ -3,52 +3,107 @@
 #include "Store.h"
 
 using namespace std;
-void main()
+int main()
 {
+	setlocale(0, "");
 	init();
 	initUser();
-	setlocale(LC_ALL, "RUSSIAN");
 	int action = 0;
 	int actionClient = 0;
 	do
 	{
-
-		cout << "1. Увiйти як клiєнт:" << endl;
-		cout << "2. Увiйти як адмiн:" << endl;
-		cout << "3. Зареєструватися:" << endl;
-		cout << "4. Вийти:" << endl;
+		
+		cout << "1. Sign in as client:" << endl;
+		cout << "2. Sign in as admin:" << endl;
+		cout << "3. Create new account:" << endl;
+		cout << "4. Exit:" << endl;
 		cin >> actionClient;
 		switch (actionClient)
 		{
 		case 1:
 		{
+			authorization();
 			do
 			{
 				system("cls");
-				cout << "Оберiть категорiю: " << endl;
-				cout << "1. Легковi: " << endl;
-				cout << "2. Вантажнi: " << endl;
-				cout << "3. Буси: " << endl;
-				cout << "4. Мотоцикли i трактори: " << endl;
-				cout << "5. Вийти." << endl;
+				cout << "Choose category: " << endl;
+				cout << "1. Cars: " << endl;
+				cout << "2. Trucks: " << endl;
+				cout << "3. Buses/miniven: " << endl;
+				cout << "4. Bikes and tractors: " << endl;
+				cout << "5. Exit." << endl;
 				cin >> actionClient;
 				switch (actionClient)
 				{
 				case 1:
 				{
-					showCars();
+					int a = 0;
+					cin >> a;
+					cout << "1. Create announcement." << endl;
+					cout << "2. Watch in category 'Cars'. " << endl;
+					if (a == 1)
+					{
+						system("cls");
+						offerNew();
+					}
+					else if (a == 2)
+
+
+					{
+						system("cls");
+						showCars();
+					}
 				}break;
 				case 2:
 				{
-					showTrucks();
+					int a = 0;
+					cout << "1. Create announcement." << endl;
+					cout << "2. Watch in category 'Trucks'. " << endl;
+					cin >> a;
+					if (a == 1)
+					{
+						system("cls");
+						offerNew();
+					}
+					else if (a == 2)
+					{
+						system("cls");
+						showTrucks();
+					}
 				}break;
 				case 3:
 				{
-					showBus();
+					int a = 0;
+					cout << "1. Create announcement." << endl;
+					cout << "2. Watch in category 'Buses'. " << endl;
+					cin >> a;
+					if (a == 1)
+					{
+						system("cls");
+						offerNew();
+					}
+					else if (a == 2)
+					{
+						system("cls");
+						showBus();
+					}
 				}break;
 				case 4:
 				{
-					showBikes();
+					int a = 0;
+					cout << "1. Create announcement." << endl;
+					cout << "2. Watch in category 'Bikes and tractors'. " << endl;
+					cin >> a;
+					if (a == 1)
+					{
+						system("cls");
+						offerNew();
+					}
+					else if (a == 2)
+					{
+						system("cls");
+						showBikes();
+					}
 				}break;
 				case 5:
 				{
@@ -57,6 +112,7 @@ void main()
 				}break;
 				default:
 					break;
+
 				}
 
 
@@ -64,11 +120,13 @@ void main()
 		}break;
 		case 2:
 		{
-
+			system("cls");
+			authorization();
 		}break;
 		case 3:
 		{
-
+			system("cls");
+			addNewUser();
 		}break;
 		case 4:
 		{
@@ -76,7 +134,10 @@ void main()
 			cout << "Good bye!" << endl;
 		}break;
 
+		}break;
+
 		
-		}
 	} while (action != 4);
+	system("pause");
+	return 0;
 }

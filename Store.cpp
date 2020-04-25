@@ -7,7 +7,8 @@
 using namespace std;
 #define CLEAR system("cls");
 #define PAUSE system("pause");
-const string fileName = "DataBase.txt";
+const string fileName = "tempBase.txt";
+const string Data = "dataBase.txt";
 const string Users = "Users.txt";
 int countArr = 0;
 vehicle* vehicleArr;
@@ -32,9 +33,6 @@ void init()
 			{
 				//cars
 				fin, temp.car.id;
-				getline(fin, temp.car.brandCar.marka);
-				getline(fin, temp.car.brandCar.model);
-				fin >> temp.car.brandCar.year;
 				getline(fin, temp.car.engine.title);
 				getline(fin, temp.car.engine.brand.marka);
 				getline(fin, temp.car.engine.brand.model);
@@ -120,9 +118,6 @@ void init()
 
 				//trucks
 				fin, temp.truck.id;
-				getline(fin, temp.truck.brandCar.marka);
-				getline(fin, temp.truck.brandCar.model);
-				fin >> temp.truck.brandCar.year;
 				getline(fin, temp.truck.engine.title);
 				getline(fin, temp.truck.engine.brand.marka);
 				getline(fin, temp.truck.engine.brand.model);
@@ -209,9 +204,6 @@ void init()
 
 				//bus
 				fin, temp.bus.id;
-				getline(fin, temp.bus.brandCar.marka);
-				getline(fin, temp.bus.brandCar.model);
-				fin >> temp.bus.brandCar.year;
 				getline(fin, temp.bus.engine.title);
 				getline(fin, temp.bus.engine.brand.marka);
 				getline(fin, temp.bus.engine.brand.model);
@@ -297,9 +289,6 @@ void init()
 				getline(fin, temp.bus.other.contact.email);
 				//bikes
 				fin, temp.bike.id;
-				getline(fin, temp.bike.brandCar.marka);
-				getline(fin, temp.bike.brandCar.model);
-				fin >> temp.bike.brandCar.year;
 				getline(fin, temp.bike.engine.title);
 				getline(fin, temp.bike.engine.brand.marka);
 				getline(fin, temp.bike.engine.brand.model);
@@ -405,18 +394,618 @@ void initUser()
 
 void showCars()
 {
+	int actionCar = 0;
+	do {
+		system("cls");
+		cout << "Choose category: " << endl;
+		cout << "1. Engine: " << endl;
+		cout << "2. Transmission: " << endl;
+		cout << "3. Body and windows: " << endl;
+		cout << "4. Headlights: " << endl;
+		cout << "5. Suspension: " << endl;
+		cout << "6. Wheels: " << endl;
+		cout << "7. Salon: " << endl;
+		cout << "8. Electronic: " << endl;
+		cout << "9. Other: " << endl;
+		cout << "0. Exit: " << endl;
+		cin >> actionCar;
+		switch (actionCar)
+		{
+		case 1:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].car.engine.title<<endl;
+				cout << "Brand" << vehicleArr[i].car.engine.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].car.engine.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].car.engine.brand.year << endl;
+				cout << "Engine volume:" << vehicleArr[i].car.engine.EnginVol << endl;
+				cout << "Petrol type:" << vehicleArr[i].car.engine.petroltype << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].car.engine.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].car.engine.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].car.engine.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].car.engine.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].car.engine.contact.email << endl;
+
+			}
+		}break;
+		case 2:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].car.transmission.title<<endl;
+				cout << "Brand" << vehicleArr[i].car.transmission.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].car.transmission.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].car.transmission.brand.year << endl;
+				cout << "transmission volume:" << vehicleArr[i].car.transmission.EnginVol << endl;
+				cout << "Petrol type:" << vehicleArr[i].car.transmission.petroltype << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].car.transmission.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].car.transmission.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].car.transmission.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].car.transmission.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].car.transmission.contact.email << endl;
+
+			}
+		}break;
+		case 3:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].car.body.title<<endl;
+				cout << "Brand" << vehicleArr[i].car.body.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].car.body.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].car.body.brand.year << endl;
+				cout << "Body type:" << vehicleArr[i].car.body.type.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].car.body.type.restyle << endl;
+				cout << "Name:" << vehicleArr[i].car.body.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].car.body.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].car.body.contact.email << endl;
+			}
+		}break;
+		case 4:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].car.light.title<<endl;
+				cout << "Brand" << vehicleArr[i].car.light.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].car.light.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].car.light.brand.year << endl;
+				cout << "Name:" << vehicleArr[i].car.light.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].car.light.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].car.light.contact.email << endl;
+			}
+		}break;
+		case 5:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].car.suspension.title<<endl;
+				cout << "Brand" << vehicleArr[i].car.suspension.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].car.suspension.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].car.suspension.brand.year << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].car.suspension.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].car.suspension.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].car.suspension.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].car.suspension.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].car.suspension.contact.email << endl;
+
+			}
+		}break;
+		case 6:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].car.wheels.title << endl;
+				cout << "Radius:" << vehicleArr[i].car.wheels.radius << endl;
+				cout << "Season:" << vehicleArr[i].car.wheels.season << endl;
+				cout << "Size (parameters):" << vehicleArr[i].car.wheels.size << endl;
+				cout << "Name:" << vehicleArr[i].car.wheels.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].car.wheels.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].car.wheels.contact.email << endl;
+			}
+		}break;
+		case 7:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].car.salon.title << endl;
+				cout << "Brand:" << vehicleArr[i].car.salon.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].car.salon.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].car.salon.brand.year << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].car.salon.condition << endl;
+				cout << "Body type:" << vehicleArr[i].car.salon.Bodytype.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].car.salon.Bodytype.restyle << endl;
+				cout << "Catalogue number:" << vehicleArr[i].car.salon.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].car.salon.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].car.salon.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].car.salon.contact.email << endl;
+			}
+		}break;
+		case 8:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].car.elecronic.title << endl;
+				cout << "Brand:" << vehicleArr[i].car.elecronic.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].car.elecronic.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].car.elecronic.brand.year << endl;
+				cout << "Body type:" << vehicleArr[i].car.elecronic.Bodytype.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].car.elecronic.Bodytype.restyle << endl;
+				cout << "Catalogue number:" << vehicleArr[i].car.elecronic.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].car.elecronic.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].car.elecronic.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].car.elecronic.contact.email << endl;
+			}
+		}break;
+		case 9:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].car.other.title << endl;
+				cout << "Brand:" << vehicleArr[i].car.other.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].car.other.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].car.other.brand.year << endl;
+				cout << "Name:" << vehicleArr[i].car.other.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].car.other.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].car.other.contact.email << endl;
+			}
+		}break;
+		}
+	}while (actionCar != 0);
 }
 
 void showTrucks()
 {
+	int actionTruck = 0;
+	do {
+		system("cls");
+		cout << "Choose category: " << endl;
+		cout << "1. Engine: " << endl;
+		cout << "2. Transmission: " << endl;
+		cout << "3. Body and windows: " << endl;
+		cout << "4. Headlights: " << endl;
+		cout << "5. Suspension: " << endl;
+		cout << "6. Wheels: " << endl;
+		cout << "7. Salon: " << endl;
+		cout << "8. Electronic: " << endl;
+		cout << "9. Other: " << endl;
+		cout << "0. Exit: " << endl;
+		cin >> actionTruck;
+		switch (actionTruck)
+		{
+		case 1:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].truck.engine.title<<endl;
+				cout << "Brand" << vehicleArr[i].truck.engine.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].truck.engine.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].truck.engine.brand.year << endl;
+				cout << "Engine volume:" << vehicleArr[i].truck.engine.EnginVol << endl;
+				cout << "Petrol type:" << vehicleArr[i].truck.engine.petroltype << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].truck.engine.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].truck.engine.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].truck.engine.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].truck.engine.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].truck.engine.contact.email << endl;
+
+			}
+		}break;
+		case 2:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].truck.transmission.title<<endl;
+				cout << "Brand" << vehicleArr[i].truck.transmission.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].truck.transmission.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].truck.transmission.brand.year << endl;
+				cout << "transmission volume:" << vehicleArr[i].truck.transmission.EnginVol << endl;
+				cout << "Petrol type:" << vehicleArr[i].truck.transmission.petroltype << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].truck.transmission.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].truck.transmission.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].truck.transmission.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].truck.transmission.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].truck.transmission.contact.email << endl;
+
+			}
+		}break;
+		case 3:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].truck.body.title<<endl;
+				cout << "Brand" << vehicleArr[i].truck.body.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].truck.body.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].truck.body.brand.year << endl;
+				cout << "Body type:" << vehicleArr[i].truck.body.type.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].truck.body.type.restyle << endl;
+				cout << "Name:" << vehicleArr[i].truck.body.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].truck.body.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].truck.body.contact.email << endl;
+			}
+		}break;
+		case 4:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].truck.light.title<<endl;
+				cout << "Brand" << vehicleArr[i].truck.light.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].truck.light.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].truck.light.brand.year << endl;
+				cout << "Name:" << vehicleArr[i].truck.light.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].truck.light.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].truck.light.contact.email << endl;
+			}
+		}break;
+		case 5:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].truck.suspension.title<<endl;
+				cout << "Brand" << vehicleArr[i].truck.suspension.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].truck.suspension.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].truck.suspension.brand.year << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].truck.suspension.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].truck.suspension.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].truck.suspension.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].truck.suspension.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].truck.suspension.contact.email << endl;
+
+			}
+		}break;
+		case 6:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].truck.wheels.title << endl;
+				cout << "Radius:" << vehicleArr[i].truck.wheels.radius << endl;
+				cout << "Season:" << vehicleArr[i].truck.wheels.season << endl;
+				cout << "Size (parameters):" << vehicleArr[i].truck.wheels.size << endl;
+				cout << "Name:" << vehicleArr[i].truck.wheels.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].truck.wheels.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].truck.wheels.contact.email << endl;
+			}
+		}break;
+		case 7:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].truck.salon.title << endl;
+				cout << "Brand:" << vehicleArr[i].truck.salon.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].truck.salon.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].truck.salon.brand.year << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].truck.salon.condition << endl;
+				cout << "Body type:" << vehicleArr[i].truck.salon.Bodytype.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].truck.salon.Bodytype.restyle << endl;
+				cout << "Catalogue number:" << vehicleArr[i].truck.salon.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].truck.salon.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].truck.salon.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].truck.salon.contact.email << endl;
+			}
+		}break;
+		case 8:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].truck.elecronic.title << endl;
+				cout << "Brand:" << vehicleArr[i].truck.elecronic.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].truck.elecronic.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].truck.elecronic.brand.year << endl;
+				cout << "Body type:" << vehicleArr[i].truck.elecronic.Bodytype.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].truck.elecronic.Bodytype.restyle << endl;
+				cout << "Catalogue number:" << vehicleArr[i].truck.elecronic.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].truck.elecronic.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].truck.elecronic.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].truck.elecronic.contact.email << endl;
+			}
+		}break;
+		case 9:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].truck.other.title << endl;
+				cout << "Brand:" << vehicleArr[i].truck.other.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].truck.other.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].truck.other.brand.year << endl;
+				cout << "Name:" << vehicleArr[i].truck.other.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].truck.other.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].truck.other.contact.email << endl;
+			}
+		}break;
+		}
+	} while (actionTruck != 0);
 }
 
 void showBus()
 {
+	int actionBus = 0;
+	do {
+		system("cls");
+		cout << "Choose category: " << endl;
+		cout << "1. Engine: " << endl;
+		cout << "2. Transmission: " << endl;
+		cout << "3. Body and windows: " << endl;
+		cout << "4. Headlights: " << endl;
+		cout << "5. Suspension: " << endl;
+		cout << "6. Wheels: " << endl;
+		cout << "7. Salon: " << endl;
+		cout << "8. Electronic: " << endl;
+		cout << "9. Other: " << endl;
+		cout << "0. Exit: " << endl;
+		cin >> actionBus;
+		switch (actionBus)
+		{
+		case 1:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].bus.engine.title<<endl;
+				cout << "Brand" << vehicleArr[i].bus.engine.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bus.engine.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bus.engine.brand.year << endl;
+				cout << "Engine volume:" << vehicleArr[i].bus.engine.EnginVol << endl;
+				cout << "Petrol type:" << vehicleArr[i].bus.engine.petroltype << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].bus.engine.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].bus.engine.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].bus.engine.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bus.engine.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bus.engine.contact.email << endl;
+
+			}
+		}break;
+		case 2:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].bus.transmission.title<<endl;
+				cout << "Brand" << vehicleArr[i].bus.transmission.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bus.transmission.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bus.transmission.brand.year << endl;
+				cout << "transmission volume:" << vehicleArr[i].bus.transmission.EnginVol << endl;
+				cout << "Petrol type:" << vehicleArr[i].bus.transmission.petroltype << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].bus.transmission.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].bus.transmission.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].bus.transmission.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bus.transmission.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bus.transmission.contact.email << endl;
+
+			}
+		}break;
+		case 3:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].bus.body.title<<endl;
+				cout << "Brand" << vehicleArr[i].bus.body.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bus.body.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bus.body.brand.year << endl;
+				cout << "Body type:" << vehicleArr[i].bus.body.type.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].bus.body.type.restyle << endl;
+				cout << "Name:" << vehicleArr[i].bus.body.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bus.body.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bus.body.contact.email << endl;
+			}
+		}break;
+		case 4:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].bus.light.title<<endl;
+				cout << "Brand" << vehicleArr[i].bus.light.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bus.light.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bus.light.brand.year << endl;
+				cout << "Name:" << vehicleArr[i].bus.light.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bus.light.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bus.light.contact.email << endl;
+			}
+		}break;
+		case 5:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].bus.suspension.title<<endl;
+				cout << "Brand" << vehicleArr[i].bus.suspension.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bus.suspension.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bus.suspension.brand.year << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].bus.suspension.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].bus.suspension.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].bus.suspension.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bus.suspension.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bus.suspension.contact.email << endl;
+
+			}
+		}break;
+		case 6:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].bus.wheels.title << endl;
+				cout << "Radius:" << vehicleArr[i].bus.wheels.radius << endl;
+				cout << "Season:" << vehicleArr[i].bus.wheels.season << endl;
+				cout << "Size (parameters):" << vehicleArr[i].bus.wheels.size << endl;
+				cout << "Name:" << vehicleArr[i].bus.wheels.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bus.wheels.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bus.wheels.contact.email << endl;
+			}
+		}break;
+		case 7:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].bus.salon.title << endl;
+				cout << "Brand:" << vehicleArr[i].bus.salon.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bus.salon.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bus.salon.brand.year << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].bus.salon.condition << endl;
+				cout << "Body type:" << vehicleArr[i].bus.salon.Bodytype.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].bus.salon.Bodytype.restyle << endl;
+				cout << "Catalogue number:" << vehicleArr[i].bus.salon.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].bus.salon.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bus.salon.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bus.salon.contact.email << endl;
+			}
+		}break;
+		case 8:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].bus.elecronic.title << endl;
+				cout << "Brand:" << vehicleArr[i].bus.elecronic.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bus.elecronic.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bus.elecronic.brand.year << endl;
+				cout << "Body type:" << vehicleArr[i].bus.elecronic.Bodytype.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].bus.elecronic.Bodytype.restyle << endl;
+				cout << "Catalogue number:" << vehicleArr[i].bus.elecronic.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].bus.elecronic.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bus.elecronic.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bus.elecronic.contact.email << endl;
+			}
+		}break;
+		case 9:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].bus.other.title << endl;
+				cout << "Brand:" << vehicleArr[i].bus.other.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bus.other.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bus.other.brand.year << endl;
+				cout << "Name:" << vehicleArr[i].bus.other.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bus.other.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bus.other.contact.email << endl;
+			}
+		}break;
+		}
+	} while (actionBus != 0);
 }
 
 void showBikes()
 {
+	int actionBike = 0;
+	do {
+		system("cls");
+		cout << "Choose category: " << endl;
+		cout << "1. Engine: " << endl;
+		cout << "2. Transmission: " << endl;
+		cout << "3. Headlights: " << endl;
+		cout << "4. Suspension: " << endl;
+		cout << "5. Wheels: " << endl;
+		cout << "6. Electronic: " << endl;
+		cout << "7. Other: " << endl;
+		cout << "0. Exit: " << endl;
+		cin >> actionBike;
+		switch (actionBike)
+		{
+		case 1:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].bike.engine.title<<endl;
+				cout << "Brand" << vehicleArr[i].bike.engine.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bike.engine.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bike.engine.brand.year << endl;
+				cout << "Engine volume:" << vehicleArr[i].bike.engine.EnginVol << endl;
+				cout << "Petrol type:" << vehicleArr[i].bike.engine.petroltype << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].bike.engine.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].bike.engine.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].bike.engine.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bike.engine.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bike.engine.contact.email << endl;
+
+			}
+		}break;
+		case 2:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].bike.transmission.title<<endl;
+				cout << "Brand" << vehicleArr[i].bike.transmission.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bike.transmission.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bike.transmission.brand.year << endl;
+				cout << "transmission volume:" << vehicleArr[i].bike.transmission.EnginVol << endl;
+				cout << "Petrol type:" << vehicleArr[i].bike.transmission.petroltype << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].bike.transmission.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].bike.transmission.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].bike.transmission.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bike.transmission.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bike.transmission.contact.email << endl;
+
+			}
+		}break;
+		
+		case 3:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].bike.light.title<<endl;
+				cout << "Brand" << vehicleArr[i].bike.light.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bike.light.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bike.light.brand.year << endl;
+				cout << "Name:" << vehicleArr[i].bike.light.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bike.light.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bike.light.contact.email << endl;
+			}
+		}break;
+		case 4:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title: " << vehicleArr[i].bike.suspension.title<<endl;
+				cout << "Brand" << vehicleArr[i].bike.suspension.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bike.suspension.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bike.suspension.brand.year << endl;
+				cout << "Condition (1-5):" << vehicleArr[i].bike.suspension.condition << endl;
+				cout << "Catalogue number:" << vehicleArr[i].bike.suspension.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].bike.suspension.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bike.suspension.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bike.suspension.contact.email << endl;
+
+			}
+		}break;
+		case 5:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].bike.wheels.title << endl;
+				cout << "Radius:" << vehicleArr[i].bike.wheels.radius << endl;
+				cout << "Season:" << vehicleArr[i].bike.wheels.season << endl;
+				cout << "Size (parameters):" << vehicleArr[i].bike.wheels.size << endl;
+				cout << "Name:" << vehicleArr[i].bike.wheels.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bike.wheels.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bike.wheels.contact.email << endl;
+			}
+		}break;
+		
+		case 6:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].bike.elecronic.title << endl;
+				cout << "Brand:" << vehicleArr[i].bike.elecronic.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bike.elecronic.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bike.elecronic.brand.year << endl;
+				cout << "Body type:" << vehicleArr[i].bike.elecronic.Bodytype.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << vehicleArr[i].bike.elecronic.Bodytype.restyle << endl;
+				cout << "Catalogue number:" << vehicleArr[i].bike.elecronic.catalogNumb << endl;
+				cout << "Name:" << vehicleArr[i].bike.elecronic.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bike.elecronic.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bike.elecronic.contact.email << endl;
+			}
+		}break;
+		case 7:
+		{
+			for (int i = 0; i < countArr; i++)
+			{
+				cout << "Title:" << vehicleArr[i].bike.other.title << endl;
+				cout << "Brand:" << vehicleArr[i].bike.other.brand.marka << endl;
+				cout << "Model:" << vehicleArr[i].bike.other.brand.model << endl;
+				cout << "Production year:" << vehicleArr[i].bike.other.brand.year << endl;
+				cout << "Name:" << vehicleArr[i].bike.other.contact.name << endl;
+				cout << "Phone number:" << vehicleArr[i].bike.other.contact.phoneNumb << endl;
+				cout << "Email:" << vehicleArr[i].bike.other.contact.email << endl;
+			}
+		}break;
+		}
+	} while (actionBike != 0);
 }
 
 void insert()
@@ -435,7 +1024,7 @@ void insert()
 	delete[]temp;
 }
 
-void addNew()
+void offerNew()
 {
 	int action = 0;
 	ofstream fout;
@@ -444,20 +1033,20 @@ void addNew()
 
 	if (isOpen == true)
 	{
-		/*vehicle* temp = new vehicle[countArr + 1];
+		vehicle* temp = new vehicle[countArr + 1];
 		for (int i = 0; i < countArr; i++)
 		{
 			temp[i] = vehicleArr[i];
-		}*/
-
+		}
+		 
 		vehicle newVehicle;
 		system("cls");
-		cout << "Оберiть категорiю: " << endl;
-		cout << "1. Легковi: " << endl;
-		cout << "2. Вантажнi: " << endl;
-		cout << "3. Буси: " << endl;
-		cout << "4. Мотоцикли i трактори: " << endl;
-		cout << "5. Вийти." << endl;
+		cout << "Choose category: " << endl;
+		cout << "1. Cars: " << endl;
+		cout << "2. Trucks: " << endl;
+		cout << "3. Buses/miniven: " << endl;
+		cout << "4. Bikes and tractors: " << endl;
+		cout << "5. Exit." << endl;
 		cin >> action;
 		switch (action)
 		{
@@ -465,211 +1054,211 @@ void addNew()
 		{
 			int actionCar = 0;
 			system("cls");
-			cout << "Оберiть категорiю: " << endl;
-			cout << "1. Двигун i навiсне: " << endl;
-			cout << "2. Трансмiсiя: " << endl;
-			cout << "3. Елементи кузова i скло: " << endl;
-			cout << "4. Фари i оптика: " << endl;
-			cout << "5. Пiдвiска: " << endl;
-			cout << "6. Колеса: " << endl;
-			cout << "7. Салон i комплектуючi: " << endl;
-			cout << "8. Електронiка i проводка: " << endl;
+			cout << "Choose category: " << endl;
+			cout << "1. Engine: " << endl;
+			cout << "2. Transmission: " << endl;
+			cout << "3. Body and windows: " << endl;
+			cout << "4. Headlights: " << endl;
+			cout << "5. Suspension: " << endl;
+			cout << "6. Wheels: " << endl;
+			cout << "7. Salon: " << endl;
+			cout << "8. Electronic: " << endl;
 			cout << "9. iнше: " << endl;
-			cout << "0. Вийти: " << endl;
+			cout << "0. Other: " << endl;
 			cin >> actionCar;
 			switch (actionCar)
 			{
 			case 1:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin>> newVehicle.car.engine.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin>> newVehicle.car.engine.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin>> newVehicle.car.engine.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin>> newVehicle.car.engine.brand.year;
-				cout << "Об'єм двигуна:" << endl;
+				cout << "Engine volume:" << endl;
 				cin>> newVehicle.car.engine.EnginVol;
-				cout << "Тип пального:" << endl;
+				cout << "Petrol type:" << endl;
 				cin>> newVehicle.car.engine.petroltype;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin>> newVehicle.car.engine.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin>> newVehicle.car.engine.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin>> newVehicle.car.engine.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin>> newVehicle.car.engine.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin>> newVehicle.car.engine.contact.email;
 			}break;
 
 			case 2:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.car.transmission.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.car.transmission.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.car.transmission.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.car.transmission.brand.year;
-				cout << "Об'єм двигуна:" << endl;
+				cout << "Engine volume:" << endl;
 				cin >> newVehicle.car.transmission.EnginVol;
-				cout << "Тип пального:" << endl;
+				cout << "Petrol type:" << endl;
 				cin >> newVehicle.car.transmission.petroltype;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.car.transmission.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.car.transmission.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.car.transmission.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.car.transmission.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.car.transmission.contact.email;
 			}break;
 
 			case 3:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin>> newVehicle.car.body.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin>> newVehicle.car.body.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin>> newVehicle.car.body.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin>> newVehicle.car.body.brand.year;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin>> newVehicle.car.body.type.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin>> newVehicle.car.body.type.restyle;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin>> newVehicle.car.body.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin>> newVehicle.car.body.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin>> newVehicle.car.body.contact.email;
 			}break;
 			case 4:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin>> newVehicle.car.light.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin>> newVehicle.car.light.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin>> newVehicle.car.light.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin>> newVehicle.car.light.brand.year;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin>> newVehicle.car.light.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin>> newVehicle.car.light.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin>> newVehicle.car.light.contact.email;
 			}break;
 			case 5:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.car.suspension.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.car.suspension.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.car.suspension.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.car.suspension.brand.year;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.car.suspension.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.car.suspension.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.car.suspension.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.car.suspension.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.car.suspension.contact.email;
 			}break;
 			case 6:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.car.wheels.title;
-				cout << "Радiус:" << endl;
+				cout << "Radius:" << endl;
 				cin >> newVehicle.car.wheels.radius;
-				cout << "Сезон:" << endl;
+				cout << "Season:" << endl;
 				cin >> newVehicle.car.wheels.season;
-				cout << "Розмiр (параметри):" << endl;
+				cout << "Size (parameters):" << endl;
 				cin >> newVehicle.car.wheels.size;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.car.wheels.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.car.wheels.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.car.wheels.contact.email;
 			}break;
 			case 7:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.car.salon.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.car.salon.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.car.salon.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.car.salon.brand.year;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.car.salon.condition;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin >> newVehicle.car.salon.Bodytype.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newVehicle.car.salon.Bodytype.restyle;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.car.salon.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.car.salon.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.car.salon.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.car.salon.contact.email;
 			}break;
 			case 8:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.car.elecronic.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.car.elecronic.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.car.elecronic.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.car.elecronic.brand.year;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin >> newVehicle.car.elecronic.Bodytype.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newVehicle.car.elecronic.Bodytype.restyle;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.car.elecronic.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.car.elecronic.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.car.elecronic.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.car.elecronic.contact.email;
 			}break;
 			case 9:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.car.other.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.car.other.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.car.other.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.car.other.brand.year;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.car.other.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.car.other.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.car.other.contact.email;
 			}break;
 			case 0:
@@ -684,211 +1273,211 @@ void addNew()
 		{
 			int actionTruck = 0;
 			system("cls");
-			cout << "Оберiть категорiю: " << endl;
-			cout << "1. Двигун i навiсне: " << endl;
-			cout << "2. Трансмiсiя: " << endl;
-			cout << "3. Елементи кузова i скло: " << endl;
-			cout << "4. Фари i оптика: " << endl;
-			cout << "5. Пiдвiска: " << endl;
-			cout << "6. Колеса: " << endl;
-			cout << "7. Салон i комплектуючi: " << endl;
-			cout << "8. Електронiка i проводка: " << endl;
+			cout << "Choose category: " << endl;
+			cout << "1. Engine: " << endl;
+			cout << "2. Transmission: " << endl;
+			cout << "3. Body and windows: " << endl;
+			cout << "4. Headlights: " << endl;
+			cout << "5. Suspension: " << endl;
+			cout << "6. Wheels: " << endl;
+			cout << "7. Salon: " << endl;
+			cout << "8. Electronic: " << endl;
 			cout << "9. iнше: " << endl;
-			cout << "0. Вийти: " << endl;
+			cout << "0. Other: " << endl;
 			cin >> actionTruck;
 			switch (actionTruck)
 			{
 			case 1:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.truck.engine.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.truck.engine.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.truck.engine.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.truck.engine.brand.year;
-				cout << "Об'єм двигуна:" << endl;
+				cout << "Engine volume:" << endl;
 				cin >> newVehicle.truck.engine.EnginVol;
-				cout << "Тип пального:" << endl;
+				cout << "Petrol type:" << endl;
 				cin >> newVehicle.truck.engine.petroltype;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.truck.engine.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.truck.engine.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.truck.engine.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.truck.engine.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.truck.engine.contact.email;
 			}break;
 
 			case 2:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.truck.transmission.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.truck.transmission.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.truck.transmission.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.truck.transmission.brand.year;
-				cout << "Об'єм двигуна:" << endl;
+				cout << "Engine volume:" << endl;
 				cin >> newVehicle.truck.transmission.EnginVol;
-				cout << "Тип пального:" << endl;
+				cout << "Petrol type:" << endl;
 				cin >> newVehicle.truck.transmission.petroltype;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.truck.transmission.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.truck.transmission.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.truck.transmission.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.truck.transmission.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.truck.transmission.contact.email;
 			}break;
 
 			case 3:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.truck.body.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.truck.body.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.truck.body.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.truck.body.brand.year;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin >> newVehicle.truck.body.type.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newVehicle.truck.body.type.restyle;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.truck.body.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.truck.body.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.truck.body.contact.email;
 			}break;
 			case 4:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.truck.light.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.truck.light.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.truck.light.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.truck.light.brand.year;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.truck.light.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.truck.light.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.truck.light.contact.email;
 			}break;
 			case 5:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.truck.suspension.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.truck.suspension.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.truck.suspension.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.truck.suspension.brand.year;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.truck.suspension.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.truck.suspension.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.truck.suspension.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.truck.suspension.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.truck.suspension.contact.email;
 			}break;
 			case 6:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.truck.wheels.title;
-				cout << "Радiус:" << endl;
+				cout << "Radius:" << endl;
 				cin >> newVehicle.truck.wheels.radius;
-				cout << "Сезон:" << endl;
+				cout << "Season:" << endl;
 				cin >> newVehicle.truck.wheels.season;
-				cout << "Розмiр (параметри):" << endl;
+				cout << "Size (parameters):" << endl;
 				cin >> newVehicle.truck.wheels.size;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.truck.wheels.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.truck.wheels.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.truck.wheels.contact.email;
 			}break;
 			case 7:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.truck.salon.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.truck.salon.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.truck.salon.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.truck.salon.brand.year;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.truck.salon.condition;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin >> newVehicle.truck.salon.Bodytype.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newVehicle.truck.salon.Bodytype.restyle;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.truck.salon.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.truck.salon.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.truck.salon.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.truck.salon.contact.email;
 			}break;
 			case 8:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.truck.elecronic.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.truck.elecronic.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.truck.elecronic.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.truck.elecronic.brand.year;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin >> newVehicle.truck.elecronic.Bodytype.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newVehicle.truck.elecronic.Bodytype.restyle;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.truck.elecronic.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.truck.elecronic.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.truck.elecronic.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.truck.elecronic.contact.email;
 			}break;
 			case 9:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.truck.other.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.truck.other.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.truck.other.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.truck.other.brand.year;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.truck.other.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.truck.other.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.truck.other.contact.email;
 			}break;
 			case 0:
@@ -903,211 +1492,211 @@ void addNew()
 		{
 			int actionBus = 0;
 			system("cls");
-			cout << "Оберiть категорiю: " << endl;
-			cout << "1. Двигун i навiсне: " << endl;
-			cout << "2. Трансмiсiя: " << endl;
-			cout << "3. Елементи кузова i скло: " << endl;
-			cout << "4. Фари i оптика: " << endl;
-			cout << "5. Пiдвiска: " << endl;
-			cout << "6. Колеса: " << endl;
-			cout << "7. Салон i комплектуючi: " << endl;
-			cout << "8. Електронiка i проводка: " << endl;
+			cout << "Choose category: " << endl;
+			cout << "1. Engine: " << endl;
+			cout << "2. Transmission: " << endl;
+			cout << "3. Body and windows: " << endl;
+			cout << "4. Headlights: " << endl;
+			cout << "5. Suspension: " << endl;
+			cout << "6. Wheels: " << endl;
+			cout << "7. Salon: " << endl;
+			cout << "8. Electronic: " << endl;
 			cout << "9. iнше: " << endl;
-			cout << "0. Вийти: " << endl;
+			cout << "0. Other: " << endl;
 			cin >> actionBus;
 			switch (actionBus)
 			{
 			case 1:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bus.engine.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.bus.engine.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bus.engine.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bus.engine.brand.year;
-				cout << "Об'єм двигуна:" << endl;
+				cout << "Engine volume:" << endl;
 				cin >> newVehicle.bus.engine.EnginVol;
-				cout << "Тип пального:" << endl;
+				cout << "Petrol type:" << endl;
 				cin >> newVehicle.bus.engine.petroltype;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.bus.engine.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.bus.engine.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bus.engine.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bus.engine.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bus.engine.contact.email;
 			}break;
 
 			case 2:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.bus.transmission.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.bus.transmission.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bus.transmission.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bus.transmission.brand.year;
-				cout << "Об'єм двигуна:" << endl;
+				cout << "Engine volume:" << endl;
 				cin >> newVehicle.bus.transmission.EnginVol;
-				cout << "Тип пального:" << endl;
+				cout << "Petrol type:" << endl;
 				cin >> newVehicle.bus.transmission.petroltype;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.bus.transmission.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.bus.transmission.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bus.transmission.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bus.transmission.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bus.transmission.contact.email;
 			}break;
 
 			case 3:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bus.body.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.bus.body.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bus.body.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bus.body.brand.year;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin >> newVehicle.bus.body.type.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newVehicle.bus.body.type.restyle;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bus.body.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bus.body.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bus.body.contact.email;
 			}break;
 			case 4:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bus.light.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.bus.light.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bus.light.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bus.light.brand.year;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bus.light.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bus.light.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bus.light.contact.email;
 			}break;
 			case 5:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bus.suspension.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.bus.suspension.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bus.suspension.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bus.suspension.brand.year;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.bus.suspension.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.bus.suspension.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bus.suspension.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bus.suspension.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bus.suspension.contact.email;
 			}break;
 			case 6:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.bus.wheels.title;
-				cout << "Радiус:" << endl;
+				cout << "Radius:" << endl;
 				cin >> newVehicle.bus.wheels.radius;
-				cout << "Сезон:" << endl;
+				cout << "Season:" << endl;
 				cin >> newVehicle.bus.wheels.season;
-				cout << "Розмiр (параметри):" << endl;
+				cout << "Size (parameters):" << endl;
 				cin >> newVehicle.bus.wheels.size;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bus.wheels.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bus.wheels.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bus.wheels.contact.email;
 			}break;
 			case 7:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.bus.salon.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.bus.salon.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bus.salon.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bus.salon.brand.year;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.bus.salon.condition;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin >> newVehicle.bus.salon.Bodytype.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newVehicle.bus.salon.Bodytype.restyle;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.bus.salon.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bus.salon.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bus.salon.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bus.salon.contact.email;
 			}break;
 			case 8:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bus.elecronic.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.bus.elecronic.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bus.elecronic.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bus.elecronic.brand.year;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin >> newVehicle.bus.elecronic.Bodytype.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newVehicle.bus.elecronic.Bodytype.restyle;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.bus.elecronic.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bus.elecronic.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bus.elecronic.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bus.elecronic.contact.email;
 			}break;
 			case 9:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bus.other.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.bus.other.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bus.other.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bus.other.brand.year;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bus.other.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bus.other.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bus.other.contact.email;
 			}break;
 			case 0:
@@ -1122,165 +1711,165 @@ void addNew()
 		{
 			int actionBike = 0;
 			system("cls");
-			cout << "Оберiть категорiю: " << endl;
-			cout << "1. Двигун i навiсне: " << endl;
-			cout << "2. Трансмiсiя: " << endl;			
-			cout << "3. Фари i оптика: " << endl;
-			cout << "4. Пiдвiска: " << endl;
-			cout << "5. Колеса: " << endl;	
-			cout << "6. Електронiка i проводка: " << endl;
+			cout << "Choose category: " << endl;
+			cout << "1. Engine: " << endl;
+			cout << "2. Transmission: " << endl;
+			cout << "3. Headlights: " << endl;
+			cout << "4. Suspension: " << endl;
+			cout << "5. Wheels: " << endl;
+			cout << "6. Electronic: " << endl;
 			cout << "7. iнше: " << endl;
-			cout << "0. Вийти: " << endl;
+			cout << "0. Other: " << endl;
 			cin >> actionBike;
 			switch (actionBike)
 			{
 			case 1:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bike.engine.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.bike.engine.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bike.engine.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bike.engine.brand.year;
-				cout << "Об'єм двигуна:" << endl;
+				cout << "Engine volume:" << endl;
 				cin >> newVehicle.bike.engine.EnginVol;
-				cout << "Тип пального:" << endl;
+				cout << "Petrol type:" << endl;
 				cin >> newVehicle.bike.engine.petroltype;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.bike.engine.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.bike.engine.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bike.engine.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bike.engine.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bike.engine.contact.email;
 			}break;
 
 			case 2:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.bike.transmission.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.bike.transmission.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bike.transmission.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bike.transmission.brand.year;
-				cout << "Об'єм двигуна:" << endl;
+				cout << "Engine volume:" << endl;
 				cin >> newVehicle.bike.transmission.EnginVol;
-				cout << "Тип пального:" << endl;
+				cout << "Petrol type:" << endl;
 				cin >> newVehicle.bike.transmission.petroltype;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.bike.transmission.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.bike.transmission.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bike.transmission.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bike.transmission.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bike.transmission.contact.email;
 			}break;
 
 			
 			case 3:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bike.light.title;
-				cout << "Марка:" << endl;
+				cout << "Brand:" << endl;
 				cin >> newVehicle.bike.light.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bike.light.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bike.light.brand.year;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bike.light.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bike.light.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bike.light.contact.email;
 			}break;
 			case 4:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bike.suspension.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.bike.suspension.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bike.suspension.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bike.suspension.brand.year;
-				cout << "Стан (1-5):" << endl;
+				cout << "Condition (1-5):" << endl;
 				cin >> newVehicle.bike.suspension.condition;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.bike.suspension.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bike.suspension.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bike.suspension.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bike.suspension.contact.email;
 			}break;
 			case 5:
 			{
-				cout << "Опис:" << endl;
+				cout << "Title:" << endl;
 				cin >> newVehicle.bike.wheels.title;
-				cout << "Радiус:" << endl;
+				cout << "Radius:" << endl;
 				cin >> newVehicle.bike.wheels.radius;
-				cout << "Сезон:" << endl;
+				cout << "Season:" << endl;
 				cin >> newVehicle.bike.wheels.season;
-				cout << "Розмiр (параметри):" << endl;
+				cout << "Size (parameters):" << endl;
 				cin >> newVehicle.bike.wheels.size;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bike.wheels.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bike.wheels.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bike.wheels.contact.email;
 			}break;
 			
 			case 6:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bike.elecronic.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.bike.elecronic.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bike.elecronic.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bike.elecronic.brand.year;
-				cout << "Тип кузова:" << endl;
+				cout << "Body type:" << endl;
 				cin >> newVehicle.bike.elecronic.Bodytype.bodytype;
-				cout << "Рестайл (1)/ Дорестайл (0):" << endl;
+				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newVehicle.bike.elecronic.Bodytype.restyle;
-				cout << "Каталожний номер (якщо є):" << endl;
+				cout << "Catalogue number:" << endl;
 				cin >> newVehicle.bike.elecronic.catalogNumb;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bike.elecronic.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bike.elecronic.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bike.elecronic.contact.email;
 			}break;
 			case 7:
 			{
-				cout << "Опис" << endl;
+				cout << "Title" << endl;
 				cin >> newVehicle.bike.other.title;
-				cout << "Марка" << endl;
+				cout << "Brand" << endl;
 				cin >> newVehicle.bike.other.brand.marka;
-				cout << "модель:" << endl;
+				cout << "Model:" << endl;
 				cin >> newVehicle.bike.other.brand.model;
-				cout << "Рiк випуску:" << endl;
+				cout << "Production year:" << endl;
 				cin >> newVehicle.bike.other.brand.year;
-				cout << "Контактнi данi (iм'я):" << endl;
+				cout << "Name:" << endl;
 				cin >> newVehicle.bike.other.contact.name;
-				cout << "Номер телефону:" << endl;
+				cout << "Phone number:" << endl;
 				cin >> newVehicle.bike.other.contact.phoneNumb;
-				cout << "Ел. пошта:" << endl;
+				cout << "Email:" << endl;
 				cin >> newVehicle.bike.other.contact.email;
 			}break;
 			case 0:
@@ -1308,7 +1897,7 @@ void addNew()
 
 }
 
-void offerNew()
+void addNew()
 {
 
 }
@@ -1317,23 +1906,20 @@ void addNewUser()
 {
 	{
 		user newUser;
-		cout << "Введiть логiн: ";
+		cout << "Enter login: ";
 		//cin.ignore();
 		cin>> newUser.login;
-		cout << "Введiть пароль: ";
+		cout << "Enter password: ";
 		cin >> newUser.password;
 		
-		cout << "Введiть iм'я нового користувача: ";
+		cout << "Enter new user's name: ";
 		cin.ignore();
 		getline(cin, newUser.contact.name);
-		cout << "Введiть контактний номер телефону:" << endl;
+		cout << "Enter phone number:" << endl;
 		cin >> newUser.contact.phoneNumb;
-		cout << "Введiть email: ";
+		cout << "Enter email: ";
 		cin >> newUser.contact.email;
 		
-		
-		
-
 		users.push_back(newUser);
 
 		ofstream fout;
@@ -1351,7 +1937,7 @@ void addNewUser()
 			fout << newUser.contact.email << endl;
 		}
 		fout.close();
-		cout << "Успiшно додано нового користувача." << endl;
+		cout << "New user added successful." << endl;
 		PAUSE
 			CLEAR
 	}
@@ -1363,24 +1949,25 @@ void authorization()
 	string password;
 	int tryAgain = 0;
 begin:
-	cout << "Логiн:" << endl;
+	cout << "Login:" << endl;
 	cin >> login;
-	cout << "Пароль: " << endl;
+	cout << "Password: " << endl;
 	cin >> password;
 
 	for (user item : users)
 	{
 		if (item.login == login || item.password == password)
 		{
-			cout << "Ви увiйшли як " << login << endl;
+			cout << "You entered as: " << login << endl;
 
 		}
-		else
+		else 
+		{
 			CLEAR
 
-			cout << "Невiрний логiн чи пароль, або користувач з таким логiном не iснує!" << endl;
-		cout << "1. Спробувати знову: " << endl;
-		cout << "2. Вихiд." << endl;
+			cout << "Wrong login or password or such user doesn't exist!" << endl;
+			cout << "Press 1 to try again: " << endl;
+		}
 		cin >> tryAgain;
 		if (tryAgain == 1)
 		{
@@ -1389,5 +1976,29 @@ begin:
 		else
 			break;
 		return; //Не знаю як тут зробити, щоб воно геть повернуло на початок функцiї мейн. Тому хай поки буде так.
+	}
+}
+
+void searchCar()
+{
+	string text;
+	cout << "Enter text for search: " << endl;
+	cin >> text;
+	for (int i = 0; i < countArr; i++)
+	{
+		if (vehicleArr[i].car.engine.title.find(text) != string::npos)
+		{
+			cout << "Title: " << vehicleArr[i].car.engine.title<<endl;
+			cout << "Brand: " << vehicleArr[i].car.engine.brand.marka << endl;
+			cout << "Model: " << vehicleArr[i].car.engine.brand.model << endl;
+			cout << "Production year: " << vehicleArr[i].car.engine.brand.year << endl;
+			cout << "Engine volume: " << vehicleArr[i].car.engine.EnginVol << endl;
+			cout << "Petrol type: " << vehicleArr[i].car.engine.petroltype << endl;
+			cout << "Condition (1-5): " << vehicleArr[i].car.engine.condition << endl;
+			cout << "Catalogue number: " << vehicleArr[i].car.engine.catalogNumb << endl;
+			cout << "Name: " << vehicleArr[i].car.engine.contact.name << endl;
+			cout << "Phone number: " << vehicleArr[i].car.engine.contact.phoneNumb << endl;
+			cout << "Email: " << vehicleArr[i].car.engine.contact.email << endl;
+		}
 	}
 }

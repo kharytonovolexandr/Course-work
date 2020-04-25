@@ -108,7 +108,6 @@ struct user
 struct cars
 {
 	int id;
-	brandCar brandCar;
 	engine engine;
 	transmission transmission;
 	body body;
@@ -122,7 +121,6 @@ struct cars
 struct truck
 {
 	int id;
-	brandCar brandCar;
 	engine engine;
 	transmission transmission;
 	body body;
@@ -136,7 +134,6 @@ struct truck
 struct bus
 {
 	int id;
-	brandCar brandCar;
 	engine engine;
 	transmission transmission;
 	body body;
@@ -150,7 +147,6 @@ struct bus
 struct bikes
 {
 	int id;
-	brandCar brandCar;
 	engine engine;
 	transmission transmission;
 	headlights light;
@@ -178,3 +174,4 @@ void addNew();
 void offerNew();
 void addNewUser();
 void authorization();
+void searchCar();
