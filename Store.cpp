@@ -379,7 +379,6 @@ void initUser()
 		{
 			getline(fin2, temp.login);
 			if (temp.login != "") {
-				getline(fin2, temp.login);
 				getline(fin2, temp.password);
 				getline(fin2, temp.contact.name);
 				getline(fin2, temp.contact.phoneNumb);
@@ -1975,7 +1974,7 @@ begin:
 		}
 		else
 			break;
-		return; //Не знаю як тут зробити, щоб воно геть повернуло на початок функцiї мейн. Тому хай поки буде так.
+		//return; //Не знаю як тут зробити, щоб воно геть повернуло на початок функцiї мейн. Тому хай поки буде так.
 	}
 }
 

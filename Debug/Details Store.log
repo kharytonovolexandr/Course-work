@@ -1,16 +1,2 @@
 ﻿  Source.cpp
-  Store.cpp
-C:\Users\admin\source\repos\Details Store\Store.cpp(1066,12): warning C4566: character represented by universal-character-name '\u043D' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1066,12): warning C4566: character represented by universal-character-name '\u0448' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1066,12): warning C4566: character represented by universal-character-name '\u0435' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1285,12): warning C4566: character represented by universal-character-name '\u043D' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1285,12): warning C4566: character represented by universal-character-name '\u0448' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1285,12): warning C4566: character represented by universal-character-name '\u0435' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1504,12): warning C4566: character represented by universal-character-name '\u043D' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1504,12): warning C4566: character represented by universal-character-name '\u0448' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1504,12): warning C4566: character represented by universal-character-name '\u0435' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1721,12): warning C4566: character represented by universal-character-name '\u043D' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1721,12): warning C4566: character represented by universal-character-name '\u0448' cannot be represented in the current code page (1252)
-C:\Users\admin\source\repos\Details Store\Store.cpp(1721,12): warning C4566: character represented by universal-character-name '\u0435' cannot be represented in the current code page (1252)
-  Generating Code...
   Details Store.vcxproj -> C:\Users\admin\source\repos\Details Store\Debug\Details Store.exe

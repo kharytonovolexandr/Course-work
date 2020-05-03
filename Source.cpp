@@ -5,20 +5,22 @@
 using namespace std;
 int main()
 {
-	setlocale(0, "");
 	init();
 	initUser();
 	int action = 0;
 	int actionClient = 0;
 	do
 	{
-		
+		cout << "*******DETAILS STORE*******" << endl;
+		cout << "***************************" << endl;
 		cout << "1. Sign in as client:" << endl;
 		cout << "2. Sign in as admin:" << endl;
 		cout << "3. Create new account:" << endl;
-		cout << "4. Exit:" << endl;
-		cin >> actionClient;
-		switch (actionClient)
+		cout << "4. Specific service:" << endl;
+		cout << "5. Exit:" << endl;
+		cout << "***************************" << endl;
+		cin >> action;
+		switch (action)
 		{
 		case 1:
 		{
@@ -47,8 +49,6 @@ int main()
 						offerNew();
 					}
 					else if (a == 2)
-
-
 					{
 						system("cls");
 						showCars();
@@ -105,6 +105,7 @@ int main()
 						showBikes();
 					}
 				}break;
+				
 				case 5:
 				{
 					system("cls");
@@ -120,8 +121,18 @@ int main()
 		}break;
 		case 2:
 		{
+			string login;
+			string password;
 			system("cls");
-			authorization();
+			cout << "Login:" << endl;
+			cin >> login;
+			cout << "Password" << endl;
+			cin >> password;
+			if (login=="admin"&&password=="1111")
+			{
+
+			}
+
 		}break;
 		case 3:
 		{
@@ -130,6 +141,10 @@ int main()
 		}break;
 		case 4:
 		{
+
+		}break;
+		case 5:
+		{
 			system("cls");
 			cout << "Good bye!" << endl;
 		}break;
@@ -137,7 +152,7 @@ int main()
 		}break;
 
 		
-	} while (action != 4);
+	} while (action != 5);
 	system("pause");
 	return 0;
 }
