@@ -107,7 +107,7 @@ struct user
 
 struct cars
 {
-	int id;
+	//int id;
 	engine engine;
 	transmission transmission;
 	body body;
@@ -120,7 +120,7 @@ struct cars
 };
 struct truck
 {
-	int id;
+	//int id;
 	engine engine;
 	transmission transmission;
 	body body;
@@ -133,7 +133,7 @@ struct truck
 };
 struct bus
 {
-	int id;
+	//int id;
 	engine engine;
 	transmission transmission;
 	body body;
@@ -146,7 +146,7 @@ struct bus
 };
 struct bikes
 {
-	int id;
+	//int id;
 	engine engine;
 	transmission transmission;
 	headlights light;

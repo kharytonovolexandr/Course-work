@@ -40,9 +40,9 @@ int main()
 				case 1:
 				{
 					int a = 0;
-					cin >> a;
 					cout << "1. Create announcement." << endl;
 					cout << "2. Watch in category 'Cars'. " << endl;
+					cin >> a;
 					if (a == 1)
 					{
 						system("cls");
