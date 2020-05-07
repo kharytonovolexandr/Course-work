@@ -145,6 +145,8 @@
     <ClInclude Include="Store.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="dataBase.txt" />
+    <Text Include="tempBase.txt" />
     <Text Include="Users.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

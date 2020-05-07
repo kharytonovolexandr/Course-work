@@ -104,10 +104,14 @@ struct user
 	string password;
 	contact contact;
 };
-
+struct something
+{
+	int id;
+	string some;
+};
 struct cars
 {
-	//int id;
+	int id=0;
 	engine engine;
 	transmission transmission;
 	body body;
@@ -120,7 +124,7 @@ struct cars
 };
 struct truck
 {
-	//int id;
+	int id;
 	engine engine;
 	transmission transmission;
 	body body;
@@ -133,7 +137,7 @@ struct truck
 };
 struct bus
 {
-	//int id;
+	int id;
 	engine engine;
 	transmission transmission;
 	body body;
@@ -146,7 +150,7 @@ struct bus
 };
 struct bikes
 {
-	//int id;
+	int id;
 	engine engine;
 	transmission transmission;
 	headlights light;
@@ -158,20 +162,62 @@ struct bikes
 struct vehicle
 {
 	int id;
+
 	cars car;
 	truck truck;
 	bus bus;
 	bikes bike;
 };
-void init();
+void initCars();
 void initUser();
-void showCars();
-void showTrucks();
-void showBus();
-void showBikes();
-void insert();
+void insertCar();
+void insertTruck();
+void insertBus();
+void insertBike();
+void offerNewBus();
 void addNew();
-void offerNew();
+void offerNewCar();
+void offerNewTruck();
+void offerNewBike();
 void addNewUser();
 void authorization();
 void searchCar();
+void showCarsEngine();
+void showCarsTransmission();
+void showCarsBody();
+void showCarsLight();
+void showCarsSuspension();
+void showCarsWheels();
+void showCarsSalon();
+void showCarsElectric();
+void showCarsOther();
+void showTruckEngine();
+void showTruckTransmission();
+void showTruckBody();
+void showTruckLight();
+void showTruckSuspension();
+void showTruckWheels();
+void showTruckSalon();
+void showTruckElectric();
+void showTruckOther();
+void showBusEngine();
+void showBusTransmission();
+void showBusBody();
+void showBusLight();
+void showBusSuspension();
+void showBusWheels();
+void showBusSalon();
+void showBusElectric();
+void showBusOther();
+void showBikesEngine();
+void showBikeTransmission();
+void showBikeLight();
+void showBikeSuspensin();
+void showBikeWheels();
+void showBikeElectric();
+void showBikeOther();
+void menu();
+void BikeMenu();
+void addSome();
+void showSome();
+void initSomething();

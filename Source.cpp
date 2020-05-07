@@ -5,7 +5,8 @@
 using namespace std;
 int main()
 {
-	init();
+	initSomething();
+	//initCars();
 	initUser();
 	int action = 0;
 	int actionClient = 0;
@@ -46,12 +47,85 @@ int main()
 					if (a == 1)
 					{
 						system("cls");
-						offerNew();
+						addSome();
+						//offerNewCar();
 					}
 					else if (a == 2)
 					{
-						system("cls");
-						showCars();
+						int actionCar = 0;
+						do {
+							system("cls");
+							menu();
+							cin >> actionCar;
+							switch (actionCar)
+							{
+							case 1:
+							{
+								system("cls");
+								showSome();
+								//showCarsEngine();
+								system("pause");
+							}break;
+							case 2:
+							{
+								system("cls");
+								showCarsTransmission();
+								system("pause");
+							}break;
+							case 3:
+							{
+								system("cls");
+								showCarsBody();
+								system("pause");
+							}break;
+							case 4:
+							{
+								system("cls");
+								showCarsLight();
+								system("pause");
+							}break;
+							case 5:
+							{
+								system("cls");
+								showCarsSuspension();
+								system("pause");
+							}break;
+							case 6:
+							{
+								system("cls");
+								showCarsWheels();
+								system("pause");
+							}break;
+							case 7:
+							{
+								system("cls");
+								showCarsSalon();
+								system("pause");
+							}break;
+							case 8:
+							{
+								system("cls");
+								showCarsElectric();
+								system("pause");
+							}break;
+							case 9:
+							{
+								system("cls");
+								showCarsOther();
+								system("pause");
+							}break;
+							case 0:
+							{
+								system("cls");
+								
+							}break;
+							default:
+							{
+							}break;
+							}
+						} while (actionCar != 0);
+						
+						
 					}
 				}break;
 				case 2:
@@ -63,12 +137,83 @@ int main()
 					if (a == 1)
 					{
 						system("cls");
-						offerNew();
+						offerNewTruck();
 					}
 					else if (a == 2)
 					{
-						system("cls");
-						showTrucks();
+						int actionTruck = 0;
+						do {
+							system("cls");
+							menu();
+							cin >> actionTruck;
+							switch (actionTruck)
+							{
+							case 1:
+							{
+								system("cls");
+								showTruckEngine();
+								system("pause");
+							}break;
+							case 2:
+							{
+								system("cls");
+								showTruckTransmission();
+								system("pause");
+							}break;
+							case 3:
+							{
+								system("cls");
+								showTruckBody();
+								system("pause");
+							}break;
+							case 4:
+							{
+								system("cls");
+								showTruckLight();
+								system("pause");
+							}break;
+							case 5:
+							{
+								system("cls");
+								showTruckSuspension();
+								system("pause");
+							}break;
+							case 6:
+							{
+								system("cls");
+								showTruckWheels();
+								system("pause");
+							}break;
+							case 7:
+							{
+								system("cls");
+								showTruckSalon();
+								system("pause");
+							}break;
+							case 8:
+							{
+								system("cls");
+								showTruckElectric();
+								system("pause");
+							}break;
+							case 9:
+							{
+								system("cls");
+								showTruckOther();
+								system("pause");
+							}break;
+							case 0:
+							{
+								system("cls");
+
+							}break;
+							default:
+							{
+							}break;
+							}
+						} while (actionTruck!=0);
+										 
+					
 					}
 				}break;
 				case 3:
@@ -80,12 +225,82 @@ int main()
 					if (a == 1)
 					{
 						system("cls");
-						offerNew();
+						offerNewBus();
 					}
 					else if (a == 2)
 					{
-						system("cls");
-						showBus();
+						int actionBus = 0;
+						do {
+							system("cls");
+							menu();
+							cin >> actionBus;
+							switch (actionBus)
+							{
+							case 1:
+							{
+								system("cls");
+								showBusEngine();
+								system("pause");
+							}break;
+							case 2:
+							{
+								system("cls");
+								showBusTransmission();
+								system("pause");
+							}break;
+							case 3:
+							{
+								system("cls");
+								showBusBody();
+								system("pause");
+							}break;
+							case 4:
+							{
+								system("cls");
+								showBusLight();
+								system("pause");
+							}break;
+							case 5:
+							{
+								system("cls");
+								showBusSuspension();
+								system("pause");
+							}break;
+							case 6:
+							{
+								system("cls");
+								showBusWheels();
+								system("pause");
+							}break;
+							case 7:
+							{
+								system("cls");
+								showBusSalon();
+								system("pause");
+							}break;
+							case 8:
+							{
+								system("cls");
+								showBusElectric();
+								system("pause");
+							}break;
+							case 9:
+							{
+								system("cls");
+								showBusOther();
+								system("pause");
+							}break;
+							case 0:
+							{
+								system("cls");
+
+							}break;
+							default:
+							{
+							}break;
+							}
+						} while (actionBus != 0);
+						
 					}
 				}break;
 				case 4:
@@ -97,12 +312,73 @@ int main()
 					if (a == 1)
 					{
 						system("cls");
-						offerNew();
+						offerNewBike();
 					}
 					else if (a == 2)
 					{
-						system("cls");
-						showBikes();
+						int actionBike = 0;
+						do {
+							system("cls");
+							BikeMenu();
+							cin >> actionBike;
+							switch (actionBike)
+							{
+							case 1:
+							{
+								system("cls");
+								showBikesEngine();
+								system("pause");
+							}break;
+							case 2:
+							{
+								system("cls");
+								showBikeTransmission();
+								system("pause");
+							}break;
+							
+							case 3:
+							{
+								system("cls");
+								showBikeLight();
+								system("pause");
+							}break;
+							case 4:
+							{
+								system("cls");
+								showBikeSuspensin();
+								system("pause");
+							}break;
+							case 5:
+							{
+								system("cls");
+								showBikeWheels();
+								system("pause");
+							}break;
+							
+							case 6:
+							{
+								system("cls");
+								showBikeElectric();
+								system("pause");
+							}break;
+							case 7:
+							{
+								system("cls");
+								showBikeOther();
+								system("pause");
+							}break;
+							case 0:
+							{
+								system("cls");
+
+							}break;
+							default:
+							{
+							}break;
+							}
+						} while (actionBike != 0);
+						
+				
 					}
 				}break;
 				
