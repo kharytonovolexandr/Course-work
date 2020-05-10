@@ -25,6 +25,8 @@ struct contact
 	
 	struct engine
 	{
+		int id;
+		string category;
 		string title;
 		brandCar brand;
 		float EnginVol;
@@ -32,9 +34,12 @@ struct contact
 		int condition;
 		string catalogNumb;
 		contact contact;
+		
 	};
 	struct transmission
 	{
+		int id;
+		string category;
 		string title;
 		brandCar brand;
 		float EnginVol;
@@ -42,23 +47,33 @@ struct contact
 		int condition;
 		string catalogNumb;
 		contact contact;
+		
+
 	};
 	struct body
 	{
+		int id;
+		string category;
 		string title;
 		brandCar brand;
 		carType type;
 		int condition;
 		contact contact;
+		
+
 	};
 	struct headlights
 	{
+		int id;
+		string category;
 		string title;
 		brandCar brand;
 		contact contact;
 	};
 	struct suspension
 	{
+		int id;
+		string category;
 		string title;
 		brandCar brand;
 		int condition;
@@ -67,6 +82,8 @@ struct contact
 	};
 	struct wheels
 	{
+		int id;
+		string category;
 		string title;
 		int radius;
 		string season;
@@ -75,6 +92,8 @@ struct contact
 	};
 	struct salon
 	{
+		int id;
+		string category;
 		string title;
 		brandCar brand;
 		int condition;
@@ -85,6 +104,8 @@ struct contact
 	};
 	struct electronic
 	{
+		int id;
+		string category;
 		string title;
 		brandCar brand;
 		carType Bodytype;
@@ -93,6 +114,8 @@ struct contact
 	};
 	struct other
 	{
+		int id;
+		string category;
 		string title;
 		brandCar brand;
 		contact contact;
@@ -104,84 +127,26 @@ struct user
 	string password;
 	contact contact;
 };
-struct something
-{
-	int id;
-	string some;
-};
-struct cars
-{
-	int id=0;
-	engine engine;
-	transmission transmission;
-	body body;
-	headlights light;
-	suspension suspension;
-	wheels wheels;
-	salon salon;
-	electronic elecronic;
-	other other;
-};
-struct truck
-{
-	int id;
-	engine engine;
-	transmission transmission;
-	body body;
-	headlights light;
-	suspension suspension;
-	wheels wheels;
-	salon salon;
-	electronic elecronic;
-	other other;
-};
-struct bus
-{
-	int id;
-	engine engine;
-	transmission transmission;
-	body body;
-	headlights light;
-	suspension suspension;
-	wheels wheels;
-	salon salon;
-	electronic elecronic;
-	other other;
-};
-struct bikes
-{
-	int id;
-	engine engine;
-	transmission transmission;
-	headlights light;
-	suspension suspension;
-	wheels wheels;
-	electronic elecronic;
-	other other;
-};
-struct vehicle
-{
-	int id;
 
-	cars car;
-	truck truck;
-	bus bus;
-	bikes bike;
-};
-void initCars();
+
+void initCarsEngine();
+void initCarsTransmission();
+void initCarsBody();
+void initCarsLight();
+void initCarsSuspension();
+void initCarsWheels();
+void initCarsSalon();
+void initCarsElectro();
+void initCarsOther();
+
 void initUser();
-void insertCar();
-void insertTruck();
-void insertBus();
-void insertBike();
-void offerNewBus();
-void addNew();
+
 void offerNewCar();
-void offerNewTruck();
-void offerNewBike();
+
 void addNewUser();
 void authorization();
 void searchCar();
+
 void showCarsEngine();
 void showCarsTransmission();
 void showCarsBody();
@@ -191,33 +156,8 @@ void showCarsWheels();
 void showCarsSalon();
 void showCarsElectric();
 void showCarsOther();
-void showTruckEngine();
-void showTruckTransmission();
-void showTruckBody();
-void showTruckLight();
-void showTruckSuspension();
-void showTruckWheels();
-void showTruckSalon();
-void showTruckElectric();
-void showTruckOther();
-void showBusEngine();
-void showBusTransmission();
-void showBusBody();
-void showBusLight();
-void showBusSuspension();
-void showBusWheels();
-void showBusSalon();
-void showBusElectric();
-void showBusOther();
-void showBikesEngine();
-void showBikeTransmission();
-void showBikeLight();
-void showBikeSuspensin();
-void showBikeWheels();
-void showBikeElectric();
-void showBikeOther();
+
+void mainMenu();
 void menu();
 void BikeMenu();
-void addSome();
-void showSome();
-void initSomething();
+string categories(string categories, int choice);

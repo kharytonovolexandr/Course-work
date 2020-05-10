@@ -1,0 +1,13 @@
+12
+cars
+Silnik samochodowy
+Audi
+A4
+1997
+1.9
+diesel
+5
+-
+Sasha Kharytonov
++380975023227
+kharytonov.olexandr@gmail.com
