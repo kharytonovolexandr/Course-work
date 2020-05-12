@@ -1,4 +1,3 @@
-12
 cars
 Silnik samochodowy
 Audi

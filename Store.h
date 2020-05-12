@@ -13,38 +13,37 @@ struct contact
 	struct carType
 	{
 		string bodytype;
-		bool restyle;
+		string restyle;
 
 	};
 	struct brandCar
 	{
 		string marka;
 		string model;
-		int year;
+		string year;
 	};
 	
 	struct engine
 	{
-		int id;
+		
 		string category;
 		string title;
 		brandCar brand;
-		float EnginVol;
+		string EnginVol;
 		string petroltype;
-		int condition;
+		string condition;
 		string catalogNumb;
 		contact contact;
 		
 	};
 	struct transmission
 	{
-		int id;
 		string category;
 		string title;
 		brandCar brand;
-		float EnginVol;
+		string EnginVol;
 		string petroltype;
-		int condition;
+		string condition;
 		string catalogNumb;
 		contact contact;
 		
@@ -52,19 +51,17 @@ struct contact
 	};
 	struct body
 	{
-		int id;
 		string category;
 		string title;
 		brandCar brand;
 		carType type;
-		int condition;
+		string condition;
 		contact contact;
 		
 
 	};
 	struct headlights
 	{
-		int id;
 		string category;
 		string title;
 		brandCar brand;
@@ -72,31 +69,29 @@ struct contact
 	};
 	struct suspension
 	{
-		int id;
 		string category;
 		string title;
 		brandCar brand;
-		int condition;
+		string condition;
 		string catalogNumb;
 		contact contact;
 	};
 	struct wheels
 	{
-		int id;
+
 		string category;
 		string title;
-		int radius;
+		string radius;
 		string season;
 		string size;
 		contact contact;
 	};
 	struct salon
 	{
-		int id;
 		string category;
 		string title;
 		brandCar brand;
-		int condition;
+		string condition;
 		carType Bodytype;
 		string catalogNumb;
 		string material;
@@ -104,7 +99,6 @@ struct contact
 	};
 	struct electronic
 	{
-		int id;
 		string category;
 		string title;
 		brandCar brand;
@@ -114,7 +108,6 @@ struct contact
 	};
 	struct other
 	{
-		int id;
 		string category;
 		string title;
 		brandCar brand;
@@ -138,7 +131,7 @@ void initCarsWheels();
 void initCarsSalon();
 void initCarsElectro();
 void initCarsOther();
-
+void Remove_if();
 void initUser();
 
 void offerNewCar();

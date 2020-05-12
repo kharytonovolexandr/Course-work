@@ -3,6 +3,8 @@
 #include<string>
 #include<fstream>
 #include<list>
+#include<algorithm>
+#include<vector>
 
 using namespace std;
 #define CLEAR system("cls");
@@ -53,26 +55,23 @@ void initCarsEngine()
 		while (!fin.eof())
 		{
 			
-			fin>> temp.id;
-			//if (temp.id != NULL)
-			//{
-			//(fin.ignore());
 			getline(fin, temp.category);
+			if (temp.category != "")
+			{
 			getline(fin, temp.title);
 			getline(fin, temp.brand.marka);
 			getline(fin, temp.brand.model);
-			fin>> temp.brand.year;
-			fin>> temp.EnginVol;
+			getline(fin, temp.brand.year);
+			getline(fin, temp.EnginVol);
 			getline(fin, temp.petroltype);
-			fin>> temp.condition;
+			getline(fin, temp.condition);
 			getline(fin, temp.catalogNumb);
 			getline(fin, temp.contact.name);
 			getline(fin, temp.contact.phoneNumb);
 			getline(fin, temp.contact.email);
 			Engine.push_back(temp);
-			//}
-			//else { break;}
-			
+			}
+			else { break;}
 		}
 	}
 	fin.close();
@@ -94,18 +93,16 @@ void initCarsTransmission()
 		while (!fin.eof())
 		{
 
-			fin >> temp.id;
-			if (temp.id != NULL)
+			getline(fin, temp.category);
+			if (temp.category != "")
 			{
-				//(fin.ignore());
-				getline(fin, temp.category);
 				getline(fin, temp.title);
 				getline(fin, temp.brand.marka);
 				getline(fin, temp.brand.model);
-				fin >> temp.brand.year;
-				fin >> temp.EnginVol;
+				getline(fin,temp.brand.year);
+				getline(fin,temp.EnginVol);
 				getline(fin, temp.petroltype);
-				fin >> temp.condition;
+				getline(fin,temp.condition);
 				getline(fin, temp.catalogNumb);
 				getline(fin, temp.contact.name);
 				getline(fin, temp.contact.phoneNumb);
@@ -135,16 +132,16 @@ void initCarsBody()
 		while (!fin.eof())
 		{
 
-			fin >> temp.id;
-			if (temp.id != NULL)
+			getline(fin, temp.category);
+			if (temp.category != "")
 			{
-				getline(fin, temp.category);
+				
 				getline(fin, temp.title);
 				getline(fin, temp.brand.marka);
 				getline(fin, temp.brand.model);
-				fin >> temp.brand.year;
+				getline(fin,temp.brand.year);
 				getline(fin, temp.type.bodytype);
-				fin >> temp.type.restyle;
+				getline(fin,temp.type.restyle);
 				getline(fin, temp.contact.name);
 				getline(fin, temp.contact.phoneNumb);
 				getline(fin, temp.contact.email);
@@ -173,13 +170,13 @@ void initCarsLight()
 		while (!fin.eof())
 		{
 
-			fin >> temp.id;
-			if (temp.id != NULL)
+			getline(fin, temp.category);
+			if (temp.category != "")
 			{
 				getline(fin, temp.title);
 				getline(fin, temp.brand.marka);
 				getline(fin, temp.brand.model);
-				fin >> temp.brand.year;
+				getline(fin,temp.brand.year);
 				getline(fin, temp.contact.name);
 				getline(fin, temp.contact.phoneNumb);
 				getline(fin, temp.contact.email);
@@ -208,14 +205,14 @@ void initCarsSuspension()
 		while (!fin.eof())
 		{
 
-			fin >> temp.id;
-			if (temp.id != NULL)
+			getline(fin, temp.category);
+			if (temp.category != "")
 			{
 				getline(fin, temp.title);
 				getline(fin, temp.brand.marka);
 				getline(fin, temp.brand.model);
-				fin >> temp.brand.year;
-				fin >> temp.condition;
+				getline(fin,temp.brand.year);
+				getline(fin,temp.condition);
 				getline(fin, temp.catalogNumb);
 				getline(fin, temp.contact.name);
 				getline(fin, temp.contact.phoneNumb);
@@ -245,11 +242,11 @@ void initCarsWheels()
 		while (!fin.eof())
 		{
 
-			fin >> temp.id;
-			if (temp.id != NULL)
+			getline(fin,temp.category);
+			if (temp.category != "")
 			{
 				getline(fin, temp.title);
-				fin >> temp.radius;
+				getline(fin,temp.radius);
 				getline(fin, temp.season);
 				getline(fin, temp.size);
 				getline(fin, temp.contact.name);
@@ -280,16 +277,16 @@ void initCarsSalon()
 		while (!fin.eof())
 		{
 
-			fin >> temp.id;
-			if (temp.id != NULL)
+			getline(fin,temp.category);
+			if (temp.category != "")
 			{
 				getline(fin, temp.title);
 				getline(fin, temp.brand.marka);
 				getline(fin, temp.brand.model);
-				fin >> temp.brand.year;
-				fin >> temp.condition;
+				getline(fin,temp.brand.year);
+				getline(fin,temp.condition);
 				getline(fin, temp.Bodytype.bodytype);
-				fin >> temp.Bodytype.restyle;
+				getline(fin,temp.Bodytype.restyle);
 				getline(fin, temp.catalogNumb);
 				getline(fin, temp.contact.name);
 				getline(fin, temp.contact.phoneNumb);
@@ -319,15 +316,15 @@ void initCarsElectro()
 		while (!fin.eof())
 		{
 
-			fin >> temp.id;
-			if (temp.id != NULL)
+			getline(fin,temp.category);
+			if (temp.category != "")
 			{
 				getline(fin, temp.title);
 				getline(fin, temp.brand.marka);
 				getline(fin, temp.brand.model);
-				fin >> temp.brand.year;
+				getline(fin,temp.brand.year);
 				getline(fin, temp.Bodytype.bodytype);
-				fin >> temp.Bodytype.restyle;
+				getline(fin,temp.Bodytype.restyle);
 				getline(fin, temp.catalogNumb);
 				getline(fin, temp.contact.name);
 				getline(fin, temp.contact.phoneNumb);
@@ -357,13 +354,13 @@ void initCarsOther()
 		while (!fin.eof())
 		{
 
-			fin >> temp.id;
-			if (temp.id != NULL)
+			getline(fin,temp.category);
+			if (temp.category != "")
 			{
 				getline(fin, temp.title);
 				getline(fin, temp.brand.marka);
 				getline(fin, temp.brand.model);
-				fin >> temp.brand.year;
+				getline(fin,temp.brand.year);
 				getline(fin, temp.contact.name);
 				getline(fin, temp.contact.phoneNumb);
 				getline(fin, temp.contact.email);
@@ -375,6 +372,54 @@ void initCarsOther()
 		}
 	}
 	fin.close();
+}
+
+void Remove_if()
+{
+	string title;
+	ofstream fout;
+	fout.open(carsEngineFile);
+	bool isOpen = fout.is_open();
+
+	if (isOpen == true)
+	{
+		
+		cout << "Write down title (word by word) to delete your announcement: " << endl;
+		cin >> title;
+		for (user item : users)
+		{
+			for (engine ItemEng : Engine)
+			{
+				if (item.contact.name == ItemEng.contact.name)
+				{
+					/*auto result = remove_if(Engine.begin(), Engine.end(), [](const engine &E)
+						{
+							return E.title == title;
+						});
+					Engine.erase(result, Engine.end());*/
+					
+				}
+			
+				fout << ItemEng.category << endl;
+				fout << ItemEng.title << endl;
+				fout << ItemEng.brand.marka << endl;
+				fout << ItemEng.brand.model << endl;
+				fout << ItemEng.brand.year << endl;
+				fout << ItemEng.EnginVol << endl;
+				fout << ItemEng.petroltype << endl;
+				fout << ItemEng.condition << endl;
+				fout << ItemEng.catalogNumb << endl;
+				fout << ItemEng.contact.name << endl;
+				fout << ItemEng.contact.phoneNumb << endl;
+				fout << ItemEng.contact.email << endl;
+			}
+		}
+		
+	}
+	else
+	{
+		cout << "ERROR! File not open." << endl;
+	}
 }
 
 //void initTruck()
@@ -401,7 +446,7 @@ void initCarsOther()
 //			getline(fin, temp.engine.brand.marka);
 //			getline(fin, temp.engine.brand.model);
 //			fin>> temp.engine.brand.year;
-//			fin >> temp.engine.EnginVol;
+//			getline(fin,temp.engine.EnginVol;
 //			getline(fin, temp.engine.petroltype);
 //			fin, temp.engine.condition;
 //			getline(fin, temp.engine.catalogNumb);
@@ -842,7 +887,6 @@ void offerNewCar()
 					}
 				}
 
-				newEngine.id++;
 				mainMenu();
 				categories(category, choice);
 				newEngine.category = categories(category, choice);
@@ -864,7 +908,7 @@ void offerNewCar()
 				cout << "Catalogue number:" << endl;
 				cin >> newEngine.catalogNumb;
 				Engine.push_back(newEngine);
-				fout << newEngine.id << endl;
+				
 				fout << newEngine.category << endl;
 				fout << newEngine.title << endl;
 				fout << newEngine.brand.marka << endl;
@@ -903,7 +947,7 @@ void offerNewCar()
 					}
 				}
 				
-				newTransmission.id++;
+				
 				mainMenu();
 				categories(category, choice);
 				newTransmission.category = categories(category, choice);
@@ -925,7 +969,7 @@ void offerNewCar()
 				cout << "Catalogue number:" << endl;
 				cin >> newTransmission.catalogNumb;
 				Transmission.push_back(newTransmission);
-				fout << newTransmission.id << endl;
+				
 				fout << newTransmission.category << endl;
 				fout << newTransmission.title << endl;
 				fout << newTransmission.brand.marka << endl;
@@ -965,7 +1009,6 @@ void offerNewCar()
 					}
 				}
 				
-				newBody.id++;
 				mainMenu();
 				categories(category, choice);
 				newBody.category = categories(category, choice);
@@ -983,7 +1026,6 @@ void offerNewCar()
 				cout << "Restyle (1)/ Non-restyle (0):" << endl;
 				cin >> newBody.type.restyle;
 				Body.push_back(newBody);
-				fout << newBody.id << endl;
 				fout << newBody.category << endl;
 				fout << newBody.title << endl;
 				fout << newBody.brand.marka << endl;
@@ -1020,7 +1062,6 @@ void offerNewCar()
 					}
 				}
 				
-				newLight.id++;
 				mainMenu();
 				categories(category, choice);
 				newLight.category = categories(category, choice);
@@ -1034,7 +1075,6 @@ void offerNewCar()
 				cout << "Production year:" << endl;
 				cin >> newLight.brand.year;
 				Light.push_back(newLight);
-				fout << newLight.id << endl;
 				fout << newLight.category << endl;
 				fout << newLight.title << endl;
 				fout << newLight.brand.marka << endl;
@@ -1069,7 +1109,6 @@ void offerNewCar()
 					}
 				}
 				
-				newSuspension.id++;
 				mainMenu();
 				categories(category, choice);
 				newSuspension.category = categories(category, choice);
@@ -1087,7 +1126,6 @@ void offerNewCar()
 				cout << "Catalogue number:" << endl;
 				cin >> newSuspension.catalogNumb;
 				Suspension.push_back(newSuspension);
-				fout << newSuspension.id << endl;
 				fout << newSuspension.category << endl;
 				fout << newSuspension.title << endl;
 				fout << newSuspension.brand.marka << endl;
@@ -1125,7 +1163,6 @@ void offerNewCar()
 					}
 				}
 				
-				newWheel.id++;
 				mainMenu();
 				categories(category, choice);
 				newWheel.category = categories(category, choice);
@@ -1139,7 +1176,6 @@ void offerNewCar()
 				cout << "Size (parameters):" << endl;
 				cin >> newWheel.size;
 				Wheels.push_back(newWheel);
-				fout << newWheel.id << endl;
 				fout << newWheel.category << endl;
 				fout << newWheel.title << endl;
 				fout << newWheel.radius << endl;
@@ -1173,7 +1209,6 @@ void offerNewCar()
 					}
 				}
 				
-				newSalon.id++;
 				mainMenu();
 				categories(category, choice);
 				newSalon.category = categories(category, choice);
@@ -1195,7 +1230,6 @@ void offerNewCar()
 				cout << "Catalogue number:" << endl;
 				cin >> newSalon.catalogNumb;
 				Salon.push_back(newSalon);
-				fout << newSalon.id << endl;
 				fout << newSalon.category << endl;
 				fout << newSalon.title << endl;
 				fout << newSalon.brand.marka << endl;
@@ -1233,7 +1267,6 @@ void offerNewCar()
 					}
 				}
 				
-				newElect.id++;
 				mainMenu();
 				categories(category, choice);
 				newElect.category = categories(category, choice);
@@ -1253,7 +1286,6 @@ void offerNewCar()
 				cout << "Catalogue number:" << endl;
 				cin >> newElect.catalogNumb;
 				Elecronic.push_back(newElect);
-				fout << newElect.id << endl;
 				fout << newElect.category << endl;
 				fout << newElect.title << endl;
 				fout << newElect.brand.marka << endl;
@@ -1290,7 +1322,6 @@ void offerNewCar()
 					}
 				}
 				
-				newOther.id++;
 				mainMenu();
 				categories(category, choice);
 				newOther.category = categories(category, choice);
@@ -1304,7 +1335,6 @@ void offerNewCar()
 				cout << "Production year:" << endl;
 				cin >> newOther.brand.year;
 				Other.push_back(newOther);
-				fout << newOther.id << endl;
 				fout << newOther.category << endl;
 				fout << newOther.title << endl;
 				fout << newOther.brand.marka << endl;
@@ -1579,10 +1609,10 @@ void showCarsEngine()
 			if (item.category == categories(category, choice))
 			{
 				if (item.title != "") {
-					cout << "id: " << item.id << endl;
+					
 					cout << "Title: " << item.title << endl;
 					cout << "Brand: " << item.brand.marka << endl;
-					cout << "Model:" << item.brand.model << endl;
+					cout << "Model: " << item.brand.model << endl;
 					cout << "Production year: " << item.brand.year << endl;
 					cout << "Engine volume: " << item.EnginVol << endl;
 					cout << "Petrol type: " << item.petroltype << endl;
@@ -1607,18 +1637,17 @@ void showCarsTransmission()
 	{
 		if (item.category == categories(category, choice)) {
 			if (item.title != "") {
-				cout << "id:" << item.id << endl;
 				cout << "Title: " << item.title << endl;
-				cout << "Brand" << item.brand.marka << endl;
-				cout << "Model:" << item.brand.model << endl;
-				cout << "Production year:" << item.brand.year << endl;
-				cout << "transmission volume:" << item.EnginVol << endl;
-				cout << "Petrol type:" << item.petroltype << endl;
-				cout << "Condition (1-5):" << item.condition << endl;
-				cout << "Catalogue number:" << item.catalogNumb << endl;
-				cout << "Name:" << item.contact.name << endl;
-				cout << "Phone number:" << item.contact.phoneNumb << endl;
-				cout << "Email:" << item.contact.email << endl;
+				cout << "Brand: " << item.brand.marka << endl;
+				cout << "Model: " << item.brand.model << endl;
+				cout << "Production year: " << item.brand.year << endl;
+				cout << "transmission volume: " << item.EnginVol << endl;
+				cout << "Petrol type: " << item.petroltype << endl;
+				cout << "Condition (1-5): " << item.condition << endl;
+				cout << "Catalogue number: " << item.catalogNumb << endl;
+				cout << "Name: " << item.contact.name << endl;
+				cout << "Phone number: " << item.contact.phoneNumb << endl;
+				cout << "Email: " << item.contact.email << endl;
 			}
 		}
 	}
@@ -1633,16 +1662,15 @@ void showCarsBody()
 	for (body item : Body) {
 		if (item.category == categories(category, choice)) {
 			if (item.title != "") {
-				cout << "id:" << item.id << endl;
 				cout << "Title: " << item.title << endl;
-				cout << "Brand" << item.brand.marka << endl;
-				cout << "Model:" << item.brand.model << endl;
-				cout << "Production year:" << item.brand.year << endl;
-				cout << "Body type:" << item.type.bodytype << endl;
-				cout << "Restyle (1)/ Non-restyle (0):" << item.type.restyle << endl;
-				cout << "Name:" << item.contact.name << endl;
-				cout << "Phone number:" << item.contact.phoneNumb << endl;
-				cout << "Email:" << item.contact.email << endl;
+				cout << "Brand: " << item.brand.marka << endl;
+				cout << "Model: " << item.brand.model << endl;
+				cout << "Production year: " << item.brand.year << endl;
+				cout << "Body type: " << item.type.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0): " << item.type.restyle << endl;
+				cout << "Name: " << item.contact.name << endl;
+				cout << "Phone number: " << item.contact.phoneNumb << endl;
+				cout << "Email: " << item.contact.email << endl;
 			}
 		}
 	}
@@ -1658,14 +1686,13 @@ void showCarsLight()
 	{
 		if (item.category == categories(category, choice)) {
 			if (item.title != "") {
-				cout << "id:" << item.id << endl;
 				cout << "Title: " << item.title << endl;
-				cout << "Brand" << item.brand.marka << endl;
-				cout << "Model:" << item.brand.model << endl;
-				cout << "Production year:" << item.brand.year << endl;
-				cout << "Name:" << item.contact.name << endl;
-				cout << "Phone number:" << item.contact.phoneNumb << endl;
-				cout << "Email:" << item.contact.email << endl;
+				cout << "Brand: " << item.brand.marka << endl;
+				cout << "Model: " << item.brand.model << endl;
+				cout << "Production year: " << item.brand.year << endl;
+				cout << "Name: " << item.contact.name << endl;
+				cout << "Phone number: " << item.contact.phoneNumb << endl;
+				cout << "Email: " << item.contact.email << endl;
 			}
 		}
 	}
@@ -1681,16 +1708,15 @@ void showCarsSuspension()
 	{
 		if (item.category == categories(category, choice)) {
 			if (item.title != "") {
-				cout << "id:" << item.id << endl;
 				cout << "Title: " << item.title << endl;
-				cout << "Brand" << item.brand.marka << endl;
-				cout << "Model:" << item.brand.model << endl;
-				cout << "Production year:" << item.brand.year << endl;
-				cout << "Condition (1-5):" << item.condition << endl;
-				cout << "Catalogue number:" << item.catalogNumb << endl;
-				cout << "Name:" << item.contact.name << endl;
-				cout << "Phone number:" << item.contact.phoneNumb << endl;
-				cout << "Email:" << item.contact.email << endl;
+				cout << "Brand: " << item.brand.marka << endl;
+				cout << "Model: " << item.brand.model << endl;
+				cout << "Production year: " << item.brand.year << endl;
+				cout << "Condition (1-5): " << item.condition << endl;
+				cout << "Catalogue number: " << item.catalogNumb << endl;
+				cout << "Name: " << item.contact.name << endl;
+				cout << "Phone number: " << item.contact.phoneNumb << endl;
+				cout << "Email: " << item.contact.email << endl;
 			}
 		}
 	}
@@ -1706,14 +1732,13 @@ void showCarsWheels()
 	{
 		if (item.category == categories(category, choice)) {
 			if (item.title != "") {
-				cout << "id:" << item.id << endl;
-				cout << "Title:" << item.title << endl;
-				cout << "Radius:" << item.radius << endl;
-				cout << "Season:" << item.season << endl;
-				cout << "Size (parameters):" << item.size << endl;
-				cout << "Name:" << item.contact.name << endl;
-				cout << "Phone number:" << item.contact.phoneNumb << endl;
-				cout << "Email:" << item.contact.email << endl;
+				cout << "Title: " << item.title << endl;
+				cout << "Radius: " << item.radius << endl;
+				cout << "Season: " << item.season << endl;
+				cout << "Size (parameters): " << item.size << endl;
+				cout << "Name: " << item.contact.name << endl;
+				cout << "Phone number: " << item.contact.phoneNumb << endl;
+				cout << "Email: " << item.contact.email << endl;
 			}
 		}
 	}
@@ -1729,18 +1754,17 @@ void showCarsSalon()
 	{
 		if (item.category == categories(category, choice)) {
 			if (item.title != "") {
-				cout << "id:" << item.id << endl;
-				cout << "Title:" << item.title << endl;
-				cout << "Brand:" << item.brand.marka << endl;
-				cout << "Model:" << item.brand.model << endl;
-				cout << "Production year:" << item.brand.year << endl;
-				cout << "Condition (1-5):" << item.condition << endl;
-				cout << "Body type:" << item.Bodytype.bodytype << endl;
-				cout << "Restyle (1)/ Non-restyle (0):" << item.Bodytype.restyle << endl;
-				cout << "Catalogue number:" << item.catalogNumb << endl;
-				cout << "Name:" << item.contact.name << endl;
-				cout << "Phone number:" << item.contact.phoneNumb << endl;
-				cout << "Email:" << item.contact.email << endl;
+				cout << "Title: " << item.title << endl;
+				cout << "Brand: " << item.brand.marka << endl;
+				cout << "Model: " << item.brand.model << endl;
+				cout << "Production year: " << item.brand.year << endl;
+				cout << "Condition (1-5): " << item.condition << endl;
+				cout << "Body type: " << item.Bodytype.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0): " << item.Bodytype.restyle << endl;
+				cout << "Catalogue number: " << item.catalogNumb << endl;
+				cout << "Name: " << item.contact.name << endl;
+				cout << "Phone number: " << item.contact.phoneNumb << endl;
+				cout << "Email: " << item.contact.email << endl;
 			}
 		}
 	}
@@ -1756,17 +1780,16 @@ void showCarsElectric()
 	{
 		if (item.category == categories(category, choice)) {
 			if (item.title != "") {
-				cout << "id:" << item.id << endl;
-				cout << "Title:" << item.title << endl;
-				cout << "Brand:" << item.brand.marka << endl;
-				cout << "Model:" << item.brand.model << endl;
-				cout << "Production year:" << item.brand.year << endl;
-				cout << "Body type:" << item.Bodytype.bodytype << endl;
-				cout << "Restyle (1)/ Non-restyle (0):" << item.Bodytype.restyle << endl;
-				cout << "Catalogue number:" << item.catalogNumb << endl;
-				cout << "Name:" << item.contact.name << endl;
-				cout << "Phone number:" << item.contact.phoneNumb << endl;
-				cout << "Email:" << item.contact.email << endl;
+				cout << "Title: " << item.title << endl;
+				cout << "Brand: " << item.brand.marka << endl;
+				cout << "Model: " << item.brand.model << endl;
+				cout << "Production year: " << item.brand.year << endl;
+				cout << "Body type: " << item.Bodytype.bodytype << endl;
+				cout << "Restyle (1)/ Non-restyle (0): " << item.Bodytype.restyle << endl;
+				cout << "Catalogue number: " << item.catalogNumb << endl;
+				cout << "Name: " << item.contact.name << endl;
+				cout << "Phone number: " << item.contact.phoneNumb << endl;
+				cout << "Email: " << item.contact.email << endl;
 			}
 		}
 	}
@@ -1782,14 +1805,13 @@ void showCarsOther()
 	{
 		if (item.category == categories(category, choice)) {
 			if (item.title != "") {
-				cout << "id:" << item.id << endl;
-				cout << "Title:" << item.title << endl;
-				cout << "Brand:" << item.brand.marka << endl;
-				cout << "Model:" << item.brand.model << endl;
-				cout << "Production year:" << item.brand.year << endl;
-				cout << "Name:" << item.contact.name << endl;
-				cout << "Phone number:" << item.contact.phoneNumb << endl;
-				cout << "Email:" << item.contact.email << endl;
+				cout << "Title: " << item.title << endl;
+				cout << "Brand: " << item.brand.marka << endl;
+				cout << "Model: " << item.brand.model << endl;
+				cout << "Production year: " << item.brand.year << endl;
+				cout << "Name: " << item.contact.name << endl;
+				cout << "Phone number: " << item.contact.phoneNumb << endl;
+				cout << "Email: " << item.contact.email << endl;
 			}
 		}
 	}
