@@ -1,5 +1,2 @@
-﻿  Source.cpp
-  Store.cpp
-C:\Users\admin\source\repos\Details Store\Store.cpp(396,1): error C3493: 'title' cannot be implicitly captured because no default capture mode has been specified
-C:\Users\admin\source\repos\Details Store\Store.cpp(394,20): error C3861: 'remove_if': identifier not found
-  Generating Code...
+﻿  Store.cpp
+  Details Store.vcxproj -> C:\Users\admin\source\repos\Details Store\Debug\Details Store.exe

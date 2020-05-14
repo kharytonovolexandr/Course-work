@@ -139,7 +139,15 @@ void offerNewCar();
 void addNewUser();
 void authorization();
 void searchCar();
-
+void showMyEngines();
+void showMyTransmission();
+void showMyBody();
+void showMyLight();
+void showMySuspens();
+void showMyWheels();
+void showMySalon();
+void showMyElectro();
+void showMyOther();
 void showCarsEngine();
 void showCarsTransmission();
 void showCarsBody();
@@ -149,7 +157,7 @@ void showCarsWheels();
 void showCarsSalon();
 void showCarsElectric();
 void showCarsOther();
-
+void edit();
 void mainMenu();
 void menu();
 void BikeMenu();
